@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Visual Learning Platform for Deaf Students — Class 5 EVS Science. Learn through pictures, animations, and sign language.">
-  <title>🌱 Learn with Eyes — Class 5 Science</title>
+  <meta name="description" content="Visual Learning Platform for Deaf Students — Class 4 & 5 EVS Science. Learn through pictures, animations, and sign language.">
+  <title>🌱 Learn with Eyes — Class 4 & 5 Science</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,10 +17,10 @@
       <span>Learn with Eyes</span>
     </div>
     <nav class="header__nav">
-      <button class="header__ctrl-btn" id="fontSizeBtn" title="Change text size (Normal / Large / Extra Large)" aria-label="Toggle text size">
+      <button class="header__ctrl-btn" id="fontSizeBtn" title="Change text size" aria-label="Toggle text size">
         <span id="fontSizeLabel">A⁺</span>
       </button>
-      <button class="header__ctrl-btn" id="themeToggleBtn" title="Toggle High Contrast / Dark Mode" aria-label="Toggle theme">
+      <button class="header__ctrl-btn" id="themeToggleBtn" title="Toggle theme" aria-label="Toggle theme">
         <span id="themeToggleIcon">🌙</span>
       </button>
       <button class="header__menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
@@ -34,69 +34,7 @@
       <span class="sidebar__link-icon">🏡</span>
       <span class="sidebar__link-text">All Units</span>
     </a>
-
-    <div class="sidebar__unit-title">Unit I — Living Things</div>
-    <a href="#" class="sidebar__link" data-page="ch1" id="nav-ch1">
-      <span class="sidebar__link-icon">🌿</span>
-      <span class="sidebar__link-text">1. Growing Plants</span>
-      <span class="sidebar__progress">●</span>
-    </a>
-    <a href="#" class="sidebar__link chapter-preview-link" data-chapter="ch2" id="nav-ch2">
-      <span class="sidebar__link-icon">🍎</span>
-      <span class="sidebar__link-text">2. Food and Health</span>
-      <span class="sidebar__progress">🔒</span>
-    </a>
-    <a href="#" class="sidebar__link chapter-preview-link" data-chapter="ch3" id="nav-ch3">
-      <span class="sidebar__link-icon">🦁</span>
-      <span class="sidebar__link-text">3. Life of Animals</span>
-      <span class="sidebar__progress">🔒</span>
-    </a>
-    <a href="#" class="sidebar__link chapter-preview-link" data-chapter="ch4" id="nav-ch4">
-      <span class="sidebar__link-icon">🦴</span>
-      <span class="sidebar__link-text">4. Skeletal & Muscular</span>
-      <span class="sidebar__progress">🔒</span>
-    </a>
-    <a href="#" class="sidebar__link chapter-preview-link" data-chapter="ch5" id="nav-ch5">
-      <span class="sidebar__link-icon">🧠</span>
-      <span class="sidebar__link-text">5. Nervous System</span>
-      <span class="sidebar__progress">🔒</span>
-    </a>
-
-    <div class="sidebar__unit-title">Unit II — Materials & Energy</div>
-    <a href="#" class="sidebar__link disabled">
-      <span class="sidebar__link-icon">🧪</span>
-      <span class="sidebar__link-text">6. Solids, Liquids & Gases</span>
-      <span class="sidebar__progress">🔒</span>
-    </a>
-    <a href="#" class="sidebar__link disabled">
-      <span class="sidebar__link-icon">⚡</span>
-      <span class="sidebar__link-text">7. Force & Energy</span>
-      <span class="sidebar__progress">🔒</span>
-    </a>
-    <a href="#" class="sidebar__link disabled">
-      <span class="sidebar__link-icon">💨</span>
-      <span class="sidebar__link-text">8. Air and Water</span>
-      <span class="sidebar__progress">🔒</span>
-    </a>
-
-    <div class="sidebar__unit-title">Unit III — Earth & Environment</div>
-    <a href="#" class="sidebar__link disabled">
-      <span class="sidebar__link-icon">🌍</span>
-      <span class="sidebar__link-text">9. Soil Erosion</span>
-      <span class="sidebar__progress">🔒</span>
-    </a>
-    <a href="#" class="sidebar__link disabled">
-      <span class="sidebar__link-icon">💎</span>
-      <span class="sidebar__link-text">10. Rocks & Minerals</span>
-      <span class="sidebar__progress">🔒</span>
-    </a>
-
-    <div class="sidebar__unit-title">Unit IV — Safety</div>
-    <a href="#" class="sidebar__link disabled">
-      <span class="sidebar__link-icon">🩹</span>
-      <span class="sidebar__link-text">14. Safety & First Aid</span>
-      <span class="sidebar__progress">🔒</span>
-    </a>
+    <ul id="sidebarNavList" style="list-style:none;padding:0;margin:0;"></ul>
   </aside>
 
   <!-- ==================== MAIN CONTENT ==================== -->
@@ -109,99 +47,53 @@
       <div class="home-hero">
         <span class="home-hero__emoji">👁️✨📖</span>
         <h1 class="home-hero__title">Learn with Your Eyes! 👀</h1>
-        <p class="home-hero__subtitle">Class 5 Science — Visual Learning for Everyone</p>
+        <p class="home-hero__subtitle">Visual Learning for Class 4 & 5 Science</p>
       </div>
 
-      <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 20px; color: var(--text-heading);">📚 Your Units</h2>
-
-      <div class="units-grid">
-        <div class="unit-card" data-page="ch1" id="unit-card-1">
-          <span class="unit-card__badge">Start Here!</span>
-          <span class="unit-card__icon">🌿</span>
-          <div class="unit-card__number">Chapter 1</div>
-          <div class="unit-card__title">Growing Plants</div>
-          <div class="unit-card__chapters">Seeds, germination, dispersal, vegetative reproduction, agriculture</div>
-          <div class="progress-bar" style="margin-top: 16px;">
-            <div class="progress-bar__fill" style="width: 0%;"></div>
-          </div>
-        </div>
-
-        <div class="unit-card chapter-preview-card" data-chapter="ch2" id="unit-card-2" style="cursor: pointer;">
-          <span class="unit-card__icon">🍎</span>
-          <div class="unit-card__number">Chapter 2</div>
-          <div class="unit-card__title">Food and Health</div>
-          <div class="unit-card__chapters">Nutrients, balanced diet, deficiency diseases, hygiene</div>
-          <span class="unit-card__badge" style="background: rgba(0,0,0,0.06); color: var(--text-secondary); margin-top: 12px;">Coming Soon • Tap Preview</span>
-        </div>
-
-        <div class="unit-card chapter-preview-card" data-chapter="ch3" id="unit-card-3" style="cursor: pointer;">
-          <span class="unit-card__icon">🦁</span>
-          <div class="unit-card__number">Chapter 3</div>
-          <div class="unit-card__title">Life of Animals</div>
-          <div class="unit-card__chapters">Habitats, breathing in animals, feeding habits, migration</div>
-          <span class="unit-card__badge" style="background: rgba(0,0,0,0.06); color: var(--text-secondary); margin-top: 12px;">Coming Soon • Tap Preview</span>
-        </div>
-
-        <div class="unit-card chapter-preview-card" data-chapter="ch4" id="unit-card-4" style="cursor: pointer;">
-          <span class="unit-card__icon">🦴</span>
-          <div class="unit-card__number">Chapter 4</div>
-          <div class="unit-card__title">Skeletal & Muscular System</div>
-          <div class="unit-card__chapters">Bones, joints, muscles, movement, posture</div>
-          <span class="unit-card__badge" style="background: rgba(0,0,0,0.06); color: var(--text-secondary); margin-top: 12px;">Coming Soon • Tap Preview</span>
-        </div>
-
-        <div class="unit-card chapter-preview-card" data-chapter="ch5" id="unit-card-5" style="cursor: pointer;">
-          <span class="unit-card__icon">🧠</span>
-          <div class="unit-card__number">Chapter 5</div>
-          <div class="unit-card__title">Nervous System</div>
-          <div class="unit-card__chapters">Brain, spinal cord, nerves, sense organs: eyes, ears, skin</div>
-          <span class="unit-card__badge" style="background: rgba(0,0,0,0.06); color: var(--text-secondary); margin-top: 12px;">Coming Soon • Tap Preview</span>
-        </div>
+      <h2 style="font-size:1.5rem;font-weight:800;margin:24px 0 16px;color:var(--text-heading);">🎓 Choose Your Class</h2>
+      <div class="class-selector" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:640px;margin-bottom:32px;">
+        <button class="class-card" data-class="class4"
+          style="padding:24px;border:3px solid transparent;border-radius:16px;background:var(--bg-card,#fff);cursor:pointer;text-align:left;transition:all .2s;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+          <div style="font-size:2.5rem;">🍽️</div>
+          <div style="font-weight:800;font-size:1.2rem;margin-top:6px;">Class 4</div>
+          <div style="color:#666;font-size:.9rem;margin-top:4px;">Food, Teeth & Digestion</div>
+        </button>
+        <button class="class-card active" data-class="class5"
+          style="padding:24px;border:3px solid var(--color-primary,#2ecc71);border-radius:16px;background:var(--bg-card,#fff);cursor:pointer;text-align:left;transition:all .2s;box-shadow:0 2px 12px rgba(0,0,0,.08);">
+          <div style="font-size:2.5rem;">🌱</div>
+          <div style="font-weight:800;font-size:1.2rem;margin-top:6px;">Class 5</div>
+          <div style="color:#666;font-size:.9rem;margin-top:4px;">Plants, Animals & Body</div>
+        </button>
       </div>
+
+      <h2 style="font-size:1.5rem;font-weight:800;margin-bottom:20px;color:var(--text-heading);">📚 Your Chapters</h2>
+      <div id="homeUnitsGrid" class="units-grid"></div>
     </div>
 
     <!-- =====================================================
-         PAGE: CHAPTER 1 — GROWING PLANTS
+         PAGE: CLASS 5 — CHAPTER 1: GROWING PLANTS
+         (Existing content, IDs unified to match design)
          ===================================================== -->
-    <div class="content page" id="page-ch1" style="display: none;">
+    <div class="content page" id="page-class5-ch1" style="display:none;">
 
-      <!-- Chapter Hero -->
       <div class="chapter-hero">
-        <img src="images/plant_hero.png" alt="Growing Plants — colorful illustration of plants, seeds, and nature" class="chapter-hero__img">
+        <img src="images/plant_hero.png" alt="Growing Plants" class="chapter-hero__img">
         <div class="chapter-hero__overlay">
-          <div class="chapter-hero__unit-label">Unit I — Living Things and Their Needs</div>
+          <div class="chapter-hero__unit-label">Class 5 • Unit I — Living Things</div>
           <h1 class="chapter-hero__title">🌿 Growing Plants</h1>
         </div>
       </div>
 
-      <!-- Section Tabs -->
-      <div class="section-tabs" id="sectionTabs">
-        <button class="section-tab active" data-section="lesson" id="tab-lesson">
-          <span class="section-tab__icon">📖</span>
-          <span>Visual Lesson</span>
-        </button>
-        <button class="section-tab" data-section="videos" id="tab-videos">
-          <span class="section-tab__icon">🎬</span>
-          <span>Watch & Learn</span>
-        </button>
-        <button class="section-tab" data-section="isl" id="tab-isl">
-          <span class="section-tab__icon">🤟</span>
-          <span>ISL Corner</span>
-        </button>
-        <button class="section-tab" data-section="activities" id="tab-activities">
-          <span class="section-tab__icon">🎮</span>
-          <span>Activities</span>
-        </button>
-        <button class="section-tab" data-section="quiz" id="tab-quiz">
-          <span class="section-tab__icon">✅</span>
-          <span>Quiz</span>
-        </button>
+      <div class="section-tabs" id="sectionTabs-c5c1">
+        <button class="section-tab active" data-section="lesson"><span class="section-tab__icon">📖</span><span>Visual Lesson</span></button>
+        <button class="section-tab" data-section="videos"><span class="section-tab__icon">🎬</span><span>Watch & Learn</span></button>
+        <button class="section-tab" data-section="isl"><span class="section-tab__icon">🤟</span><span>ISL Corner</span></button>
+        <button class="section-tab" data-section="activities"><span class="section-tab__icon">🎮</span><span>Activities</span></button>
+        <button class="section-tab" data-section="quiz"><span class="section-tab__icon">✅</span><span>Quiz</span></button>
       </div>
 
-      <!-- ===== SECTION: Visual Lesson ===== -->
-      <div class="lesson-section active" id="section-lesson">
-
-        <!-- Card 1: Introduction -->
+      <!-- Lesson -->
+      <div class="lesson-section active" data-section="lesson">
         <div class="lesson-card fade-in">
           <div class="lesson-card__header">
             <div class="lesson-card__icon">🌱</div>
@@ -212,33 +104,15 @@
           </div>
           <div class="lesson-card__body">
             <p>Plants are <span class="keyword">living things</span>. They play a very important role in our lives.</p>
-            <p>Plants give us:</p>
             <div class="comparison-grid">
-              <div class="comparison-card">
-                <div class="comparison-card__icon">🍚</div>
-                <div class="comparison-card__title">Food</div>
-                <div class="comparison-card__desc">Rice, wheat, fruits, vegetables</div>
-              </div>
-              <div class="comparison-card">
-                <div class="comparison-card__icon">🍬</div>
-                <div class="comparison-card__title">Sugar & Spices</div>
-                <div class="comparison-card__desc">Sugar, tea, coffee, spices</div>
-              </div>
-              <div class="comparison-card">
-                <div class="comparison-card__icon">🪵</div>
-                <div class="comparison-card__title">Wood & Fibre</div>
-                <div class="comparison-card__desc">Wood, rubber, cotton</div>
-              </div>
-              <div class="comparison-card">
-                <div class="comparison-card__icon">💨</div>
-                <div class="comparison-card__title">Oxygen</div>
-                <div class="comparison-card__desc">For us to breathe</div>
-              </div>
+              <div class="comparison-card"><div class="comparison-card__icon">🍚</div><div class="comparison-card__title">Food</div><div class="comparison-card__desc">Rice, wheat, fruits, vegetables</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🍬</div><div class="comparison-card__title">Sugar & Spices</div><div class="comparison-card__desc">Sugar, tea, coffee, spices</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🪵</div><div class="comparison-card__title">Wood & Fibre</div><div class="comparison-card__desc">Wood, rubber, cotton</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">💨</div><div class="comparison-card__title">Oxygen</div><div class="comparison-card__desc">For us to breathe</div></div>
             </div>
           </div>
         </div>
 
-        <!-- Card 2: Reproduction by Seeds -->
         <div class="lesson-card lesson-card--blue fade-in">
           <div class="lesson-card__header">
             <div class="lesson-card__icon">🫘</div>
@@ -249,66 +123,20 @@
           </div>
           <div class="lesson-card__body">
             <p>We can grow plants through <span class="keyword">seeds</span>. Plants grow from seeds into seedlings. The seedlings grow into big plants with <span class="keyword">stems, roots, and leaves</span>.</p>
-            <p>When these plants grow old, they produce new plants and then die. This process is called <span class="keyword">reproduction</span>.</p>
-            <img src="images/seed_germination.png" alt="Stages of seed germination — from seed to plant" class="lesson-card__image">
-            <div class="lesson-card__image-caption">👆 The stages of how a seed grows into a plant (germination)</div>
-
+            <img src="images/seed_germination.png" alt="Stages of seed germination" class="lesson-card__image">
             <div class="callout callout--info">
               <span class="callout__icon">💡</span>
               <span class="callout__text"><strong>Germination</strong> = The process by which a seed grows into a new plant or seedling.</span>
             </div>
-
-            <p>Seeds need these things to germinate (grow):</p>
             <div class="comparison-grid">
-              <div class="comparison-card">
-                <div class="comparison-card__icon">💧</div>
-                <div class="comparison-card__title">Water</div>
-              </div>
-              <div class="comparison-card">
-                <div class="comparison-card__icon">☀️</div>
-                <div class="comparison-card__title">Sunlight</div>
-              </div>
-              <div class="comparison-card">
-                <div class="comparison-card__icon">🌬️</div>
-                <div class="comparison-card__title">Air</div>
-              </div>
-              <div class="comparison-card">
-                <div class="comparison-card__icon">🌡️</div>
-                <div class="comparison-card__title">Warmth</div>
-              </div>
+              <div class="comparison-card"><div class="comparison-card__icon">💧</div><div class="comparison-card__title">Water</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">☀️</div><div class="comparison-card__title">Sunlight</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🌬️</div><div class="comparison-card__title">Air</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🌡️</div><div class="comparison-card__title">Warmth</div></div>
             </div>
           </div>
         </div>
 
-        <!-- Card 3: Dicot vs Monocot -->
-        <div class="lesson-card lesson-card--purple fade-in">
-          <div class="lesson-card__header">
-            <div class="lesson-card__icon">🌾</div>
-            <div>
-              <div class="lesson-card__title">Two Types of Seeds</div>
-              <div class="lesson-card__subtitle">Dicot Seeds & Monocot Seeds</div>
-            </div>
-          </div>
-          <div class="lesson-card__body">
-            <p>During germination, the seedling gets food from the seed leaves called <span class="keyword">cotyledons</span>.</p>
-            <img src="images/dicot_monocot.png" alt="Comparison of dicot and monocot seeds" class="lesson-card__image">
-            <div class="lesson-card__image-caption">👆 Dicot seeds have 2 cotyledons, Monocot seeds have 1 cotyledon</div>
-            <div class="comparison-grid" style="margin-top: 16px;">
-              <div class="comparison-card" style="background: #ebf5fb;">
-                <div class="comparison-card__icon">🫘</div>
-                <div class="comparison-card__title">Dicot Seeds</div>
-                <div class="comparison-card__desc"><strong>2 cotyledons</strong><br>Examples: Beans, peas, wheat</div>
-              </div>
-              <div class="comparison-card" style="background: #fef9e7;">
-                <div class="comparison-card__icon">🌽</div>
-                <div class="comparison-card__title">Monocot Seeds</div>
-                <div class="comparison-card__desc"><strong>1 cotyledon</strong><br>Examples: Maize, rice, wheat</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4: Seed Dispersal -->
         <div class="lesson-card lesson-card--orange fade-in">
           <div class="lesson-card__header">
             <div class="lesson-card__icon">💨</div>
@@ -318,102 +146,34 @@
             </div>
           </div>
           <div class="lesson-card__body">
-            <p>If too many seeds grow too close, they fight for food, water and sunlight. Nature helps by <span class="keyword">scattering seeds</span> away. This is called <span class="keyword">seed dispersal</span>.</p>
-            <img src="images/seed_dispersal.png" alt="Four methods of seed dispersal — wind, water, animals, explosion" class="lesson-card__image">
-            <div class="lesson-card__image-caption">👆 Four ways seeds travel to new places</div>
-
-            <div style="margin-top: 20px;">
-              <div class="comparison-grid">
-                <div class="comparison-card">
-                  <div class="comparison-card__icon">🌬️</div>
-                  <div class="comparison-card__title">By Wind</div>
-                  <div class="comparison-card__desc">Light seeds with wings or hair float in the air.<br><strong>Examples:</strong> Dandelion, maple, drumstick</div>
-                </div>
-                <div class="comparison-card">
-                  <div class="comparison-card__icon">🌊</div>
-                  <div class="comparison-card__title">By Water</div>
-                  <div class="comparison-card__desc">Spongy seeds float on water to travel far.<br><strong>Examples:</strong> Coconut, lotus</div>
-                </div>
-                <div class="comparison-card">
-                  <div class="comparison-card__icon">🐦</div>
-                  <div class="comparison-card__title">By Animals</div>
-                  <div class="comparison-card__desc">Animals eat fruits and drop seeds in droppings.<br><strong>Examples:</strong> Mango, cherry, cocklebur</div>
-                </div>
-                <div class="comparison-card">
-                  <div class="comparison-card__icon">💥</div>
-                  <div class="comparison-card__title">By Bursting</div>
-                  <div class="comparison-card__desc">Some fruits burst open when ripe to throw seeds.<br><strong>Examples:</strong> Balsam, pea, okra</div>
-                </div>
-              </div>
-            </div>
-
-            <div class="callout callout--fun">
-              <span class="callout__icon">🤔</span>
-              <span class="callout__text"><strong>Fun Fact:</strong> In the deserts of North America, elephants eat fruits that fall from trees and deposit the seeds in their droppings several miles away!</span>
+            <p>Nature helps by <span class="keyword">scattering seeds</span> away. This is called <span class="keyword">seed dispersal</span>.</p>
+            <div class="comparison-grid">
+              <div class="comparison-card"><div class="comparison-card__icon">🌬️</div><div class="comparison-card__title">By Wind</div><div class="comparison-card__desc">Dandelion, maple, drumstick</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🌊</div><div class="comparison-card__title">By Water</div><div class="comparison-card__desc">Coconut, lotus</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🐦</div><div class="comparison-card__title">By Animals</div><div class="comparison-card__desc">Mango, cherry, cocklebur</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">💥</div><div class="comparison-card__title">By Bursting</div><div class="comparison-card__desc">Balsam, pea, okra</div></div>
             </div>
           </div>
         </div>
 
-        <!-- Card 5: Vegetative Reproduction -->
         <div class="lesson-card lesson-card--teal fade-in">
           <div class="lesson-card__header">
             <div class="lesson-card__icon">🪴</div>
             <div>
               <div class="lesson-card__title">Growing Plants Without Seeds!</div>
-              <div class="lesson-card__subtitle">Vegetative Reproduction — from stems, roots, and leaves</div>
+              <div class="lesson-card__subtitle">Vegetative Reproduction</div>
             </div>
           </div>
           <div class="lesson-card__body">
-            <p>Some plants can grow from their <span class="keyword">stems, roots or leaves</span> — not from seeds! This is called <span class="keyword">vegetative reproduction</span> or <span class="keyword">propagation</span>. It is much quicker than growing from seeds.</p>
-            <img src="images/vegetative_reproduction.png" alt="Vegetative reproduction — from stems, roots, and leaves" class="lesson-card__image">
-            <div class="lesson-card__image-caption">👆 Three ways plants reproduce without seeds</div>
-
-            <div class="comparison-grid" style="grid-template-columns: 1fr 1fr 1fr; margin-top: 16px;">
-              <div class="comparison-card">
-                <div class="comparison-card__icon">🌹</div>
-                <div class="comparison-card__title">From Stems</div>
-                <div class="comparison-card__desc">A stem cutting is planted in soil → new plant grows<br><strong>Examples:</strong> Rose, hibiscus, money plant</div>
-              </div>
-              <div class="comparison-card">
-                <div class="comparison-card__icon">🥔</div>
-                <div class="comparison-card__title">From Roots</div>
-                <div class="comparison-card__desc">Tuberous roots produce new plants<br><strong>Examples:</strong> Sweet potato, carrot, radish</div>
-              </div>
-              <div class="comparison-card">
-                <div class="comparison-card__icon">🍃</div>
-                <div class="comparison-card__title">From Leaves</div>
-                <div class="comparison-card__desc">Baby plants grow from leaf edges<br><strong>Examples:</strong> Bryophyllum</div>
-              </div>
-            </div>
-
-            <div class="callout callout--info" style="margin-top: 16px;">
-              <span class="callout__icon">🥔</span>
-              <span class="callout__text"><strong>Potato eyes:</strong> Potato, onion, and ginger are underground stems. A potato has small buds called "eyes" on its surface. New plants grow from these buds!</span>
+            <p>Some plants grow from <span class="keyword">stems, roots or leaves</span> — not from seeds! This is called <span class="keyword">vegetative reproduction</span>.</p>
+            <div class="comparison-grid" style="grid-template-columns:1fr 1fr 1fr;">
+              <div class="comparison-card"><div class="comparison-card__icon">🌹</div><div class="comparison-card__title">From Stems</div><div class="comparison-card__desc">Rose, hibiscus, money plant</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🥔</div><div class="comparison-card__title">From Roots</div><div class="comparison-card__desc">Sweet potato, carrot, radish</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🍃</div><div class="comparison-card__title">From Leaves</div><div class="comparison-card__desc">Bryophyllum</div></div>
             </div>
           </div>
         </div>
 
-        <!-- Card 6: Growing Plants by Spores -->
-        <div class="lesson-card lesson-card--pink fade-in">
-          <div class="lesson-card__header">
-            <div class="lesson-card__icon">🍄</div>
-            <div>
-              <div class="lesson-card__title">Growing by Spores</div>
-              <div class="lesson-card__subtitle">Ferns, mushrooms, and moss don't use seeds or flowers!</div>
-            </div>
-          </div>
-          <div class="lesson-card__body">
-            <p>Moss, mushrooms, and ferns are <span class="keyword">non-flowering plants</span>. They do not reproduce by flowers. Instead, they produce tiny <span class="keyword">spores</span> that can grow into new plants.</p>
-            <p><span class="keyword">Fungi</span> (like mushrooms), <span class="keyword">protozoa</span>, <span class="keyword">algae</span>, and <span class="keyword">mushrooms</span> also reproduce through spores.</p>
-
-            <div class="callout callout--tip">
-              <span class="callout__icon">🌿</span>
-              <span class="callout__text">Some plants like <strong>Bryophyllum</strong> reproduce from their leaves. The leaves are thick and fleshy, and have many buds along their edges. When the leaves fall on the soil, these buds grow into new plants!</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 7: Agriculture -->
         <div class="lesson-card fade-in">
           <div class="lesson-card__header">
             <div class="lesson-card__icon">👨‍🌾</div>
@@ -423,602 +183,656 @@
             </div>
           </div>
           <div class="lesson-card__body">
-            <p>The practice of growing plants on a large scale for food and other products is called <span class="keyword">agriculture</span>. A person who works on a farm is called a <span class="keyword">farmer</span>.</p>
-            <img src="images/agriculture_stages.png" alt="Stages of agriculture — ploughing, sowing, watering, harvesting" class="lesson-card__image">
-            <div class="lesson-card__image-caption">👆 The stages of farming: Ploughing → Sowing → Watering → Harvesting</div>
-
-            <p style="margin-top: 16px;">There are two main types of crops in India:</p>
+            <p>The practice of growing plants on a large scale for food is called <span class="keyword">agriculture</span>.</p>
             <div class="comparison-grid">
-              <div class="comparison-card" style="background: #fef9e7;">
-                <div class="comparison-card__icon">☀️</div>
-                <div class="comparison-card__title">Kharif Crops</div>
-                <div class="comparison-card__desc">Grown in <strong>summer</strong> season<br>Rice, jowar, bajra, maize, peanuts, jute</div>
-              </div>
-              <div class="comparison-card" style="background: #ebf5fb;">
-                <div class="comparison-card__icon">❄️</div>
-                <div class="comparison-card__title">Rabi Crops</div>
-                <div class="comparison-card__desc">Grown in <strong>winter</strong> season<br>Wheat, gram, turnips, carrots, peas</div>
-              </div>
-            </div>
-
-            <div class="callout callout--fun" style="margin-top: 16px;">
-              <span class="callout__icon">🛡️</span>
-              <span class="callout__text"><strong>Protecting Crops:</strong> Farmers protect crops from pests (locusts, grasshoppers), grazing animals (cows, goats), diseases, and big animals by using pesticides, fencing, and scarecrows!</span>
+              <div class="comparison-card" style="background:#fef9e7;"><div class="comparison-card__icon">☀️</div><div class="comparison-card__title">Kharif Crops</div><div class="comparison-card__desc">Summer — rice, jowar, bajra</div></div>
+              <div class="comparison-card" style="background:#ebf5fb;"><div class="comparison-card__icon">❄️</div><div class="comparison-card__title">Rabi Crops</div><div class="comparison-card__desc">Winter — wheat, gram, peas</div></div>
             </div>
           </div>
         </div>
+      </div>
 
-      </div><!-- end section-lesson -->
-
-      <!-- ===== SECTION: Watch & Learn (YouTube Videos) ===== -->
-      <div class="lesson-section" id="section-videos">
+      <!-- Videos -->
+      <div class="lesson-section" data-section="videos">
         <div class="lesson-card">
           <div class="lesson-card__header">
             <div class="lesson-card__icon">🎬</div>
-            <div>
-              <div class="lesson-card__title">Watch & Learn</div>
-              <div class="lesson-card__subtitle">Educational videos to help you understand visually</div>
-            </div>
-          </div>
-          <div class="lesson-card__body">
-            <p>Watch these videos to see how plants grow, how seeds travel, and how farming works! 🎥</p>
+            <div><div class="lesson-card__title">Watch & Learn</div><div class="lesson-card__subtitle">Educational videos</div></div>
           </div>
         </div>
-
         <div class="video-grid">
-          <!-- Video Slot 1: Seed Germination -->
           <div class="video-slot">
-            <div class="video-slot__embed">
-              <!-- YOUTUBE LINK SLOT 1: Seed Germination -->
-              <iframe src="https://www.youtube.com/embed/JSe_VUMymjo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="video-slot__info">
-              <div class="video-slot__title">🌱 How Seeds Germinate</div>
-              <div class="video-slot__desc">Watch a seed grow into a plant step by step</div>
-            </div>
+            <div class="video-slot__embed"><iframe src="https://www.youtube.com/embed/JSe_VUMymjo" title="YouTube video player" allowfullscreen></iframe></div>
+            <div class="video-slot__info"><div class="video-slot__title">🌱 How Seeds Germinate</div></div>
           </div>
-
-          <!-- Video Slot 2: Seed Dispersal -->
           <div class="video-slot">
-            <div class="video-slot__embed">
-              <!-- YOUTUBE LINK SLOT 2: Seed Dispersal -->
-              <iframe src="https://www.youtube.com/embed/06sbmWAzoys" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="video-slot__info">
-              <div class="video-slot__title">💨 How Seeds Travel (Seed Dispersal)</div>
-              <div class="video-slot__desc">See how wind, water, animals, and bursting help seeds travel</div>
-            </div>
+            <div class="video-slot__embed"><iframe src="https://www.youtube.com/embed/06sbmWAzoys" title="YouTube video player" allowfullscreen></iframe></div>
+            <div class="video-slot__info"><div class="video-slot__title">💨 How Seeds Travel</div></div>
           </div>
-
-          <!-- Video Slot 3: Vegetative Reproduction -->
           <div class="video-slot">
-            <div class="video-slot__embed">
-              <!-- YOUTUBE LINK SLOT 3: Vegetative Reproduction -->
-              <iframe src="https://www.youtube.com/embed/LV2jIkOwYl8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="video-slot__info">
-              <div class="video-slot__title">🪴 Growing Plants Without Seeds</div>
-              <div class="video-slot__desc">Plants growing from stems, roots, and leaves</div>
-            </div>
+            <div class="video-slot__embed"><iframe src="https://www.youtube.com/embed/LV2jIkOwYl8" title="YouTube video player" allowfullscreen></iframe></div>
+            <div class="video-slot__info"><div class="video-slot__title">🪴 Growing Plants Without Seeds</div></div>
           </div>
-
-          <!-- Video Slot 4: Agriculture / Farming -->
           <div class="video-slot">
-            <div class="video-slot__embed">
-              <!-- YOUTUBE LINK SLOT 4: Agriculture / Farming -->
-              <iframe src="https://www.youtube.com/embed/DwDBVfsrQXo" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="video-slot__info">
-              <div class="video-slot__title">👨‍🌾 How Farming Works in India</div>
-              <div class="video-slot__desc">Stages of agriculture — from ploughing to harvesting</div>
-            </div>
+            <div class="video-slot__embed"><iframe src="https://www.youtube.com/embed/DwDBVfsrQXo" title="YouTube video player" allowfullscreen></iframe></div>
+            <div class="video-slot__info"><div class="video-slot__title">👨‍🌾 How Farming Works</div></div>
           </div>
         </div>
+      </div>
 
-        <div class="callout callout--info" style="margin-top: 24px;">
-          <span class="callout__icon">💡</span>
-          <span class="callout__text">YouTube videos need an internet connection. If you're offline, connect to the internet and refresh the page to watch them!</span>
-        </div>
-      </div><!-- end section-videos -->
-
-      <!-- ===== SECTION: ISL Corner ===== -->
-      <div class="lesson-section" id="section-isl">
+      <!-- ISL -->
+      <div class="lesson-section" data-section="isl">
         <div class="lesson-card lesson-card--purple">
           <div class="lesson-card__header">
             <div class="lesson-card__icon">🤟</div>
-            <div>
-              <div class="lesson-card__title">ISL Corner — Sign Language Vocabulary</div>
-              <div class="lesson-card__subtitle">Learn the signs for important science words</div>
-            </div>
-          </div>
-          <div class="lesson-card__body">
-            <p>Click on any word card below to see the sign language video! 🤟</p>
+            <div><div class="lesson-card__title">ISL Corner — Sign Language Vocabulary</div><div class="lesson-card__subtitle">Tap any card to see the sign</div></div>
           </div>
         </div>
-
         <div class="isl-grid">
-          <div class="isl-card" data-isl="seed">
-            <span class="isl-card__emoji">🌰</span>
-            <span class="isl-card__word">Seed</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
-          <div class="isl-card" data-isl="plant">
-            <span class="isl-card__emoji">🌿</span>
-            <span class="isl-card__word">Plant</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
-          <div class="isl-card" data-isl="water">
-            <span class="isl-card__emoji">💧</span>
-            <span class="isl-card__word">Water</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
-          <div class="isl-card" data-isl="sun">
-            <span class="isl-card__emoji">☀️</span>
-            <span class="isl-card__word">Sun / Sunlight</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
-          <div class="isl-card" data-isl="root">
-            <span class="isl-card__emoji">🌳</span>
-            <span class="isl-card__word">Root</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
-          <div class="isl-card" data-isl="leaf">
-            <span class="isl-card__emoji">🍃</span>
-            <span class="isl-card__word">Leaf</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
-          <div class="isl-card" data-isl="flower">
-            <span class="isl-card__emoji">🌸</span>
-            <span class="isl-card__word">Flower</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
-          <div class="isl-card" data-isl="fruit">
-            <span class="isl-card__emoji">🍎</span>
-            <span class="isl-card__word">Fruit</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
-          <div class="isl-card" data-isl="soil">
-            <span class="isl-card__emoji">🏔️</span>
-            <span class="isl-card__word">Soil</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
-          <div class="isl-card" data-isl="farmer">
-            <span class="isl-card__emoji">👨‍🌾</span>
-            <span class="isl-card__word">Farmer</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
-          <div class="isl-card" data-isl="wind">
-            <span class="isl-card__emoji">🌬️</span>
-            <span class="isl-card__word">Wind</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
-          <div class="isl-card" data-isl="animal">
-            <span class="isl-card__emoji">🐦</span>
-            <span class="isl-card__word">Animal</span>
-            <span class="isl-card__hint">🎥 Tap to learn sign</span>
-          </div>
+          <div class="isl-card" data-isl="seed"><span class="isl-card__emoji">🌰</span><span class="isl-card__word">Seed</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="plant"><span class="isl-card__emoji">🌿</span><span class="isl-card__word">Plant</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="water"><span class="isl-card__emoji">💧</span><span class="isl-card__word">Water</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="sun"><span class="isl-card__emoji">☀️</span><span class="isl-card__word">Sun / Sunlight</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="root"><span class="isl-card__emoji">🌳</span><span class="isl-card__word">Root</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="leaf"><span class="isl-card__emoji">🍃</span><span class="isl-card__word">Leaf</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="flower"><span class="isl-card__emoji">🌸</span><span class="isl-card__word">Flower</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="fruit"><span class="isl-card__emoji">🍎</span><span class="isl-card__word">Fruit</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="soil"><span class="isl-card__emoji">🏔️</span><span class="isl-card__word">Soil</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="farmer"><span class="isl-card__emoji">👨‍🌾</span><span class="isl-card__word">Farmer</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="wind"><span class="isl-card__emoji">🌬️</span><span class="isl-card__word">Wind</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="animal"><span class="isl-card__emoji">🐦</span><span class="isl-card__word">Animal</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
         </div>
+      </div>
 
-        <div class="callout callout--tip" style="margin-top: 24px;">
-          <span class="callout__icon">📝</span>
-          <span class="callout__text">ISL video links will be added here soon. You can also add your own ISL video links!</span>
-        </div>
-      </div><!-- end section-isl -->
-
-      <!-- ===== SECTION: Activities ===== -->
-      <div class="lesson-section" id="section-activities">
-        <div class="lesson-card lesson-card--orange">
-          <div class="lesson-card__header">
-            <div class="lesson-card__icon">🎮</div>
-            <div>
-              <div class="lesson-card__title">Fun Activities</div>
-              <div class="lesson-card__subtitle">Practice what you've learned!</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Activity 1: Vocabulary Flashcards -->
+      <!-- Activities -->
+      <div class="lesson-section" data-section="activities">
         <div class="lesson-card fade-in">
           <div class="lesson-card__header">
             <div class="lesson-card__icon">📝</div>
-            <div>
-              <div class="lesson-card__title">Words to Remember</div>
-              <div class="lesson-card__subtitle">Important vocabulary from this chapter</div>
-            </div>
+            <div><div class="lesson-card__title">Words to Remember</div><div class="lesson-card__subtitle">Important vocabulary</div></div>
           </div>
           <div class="vocab-grid">
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">🌱</div>
-              <div class="vocab-card__word">Germination</div>
-              <div class="vocab-card__definition">The process by which a seed grows into a new plant</div>
-            </div>
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">🫘</div>
-              <div class="vocab-card__word">Cotyledons</div>
-              <div class="vocab-card__definition">The part of the seed that contains food for the baby plant</div>
-            </div>
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">💨</div>
-              <div class="vocab-card__word">Dispersal</div>
-              <div class="vocab-card__definition">Scattering of seeds away from the parent plant</div>
-            </div>
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">👨‍🌾</div>
-              <div class="vocab-card__word">Agriculture</div>
-              <div class="vocab-card__definition">The science of growing crops on a large scale</div>
-            </div>
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">💧</div>
-              <div class="vocab-card__word">Irrigate</div>
-              <div class="vocab-card__definition">To provide water to the crops</div>
-            </div>
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">🧴</div>
-              <div class="vocab-card__word">Pesticides</div>
-              <div class="vocab-card__definition">Chemicals used to kill insects and fungi that damage plants</div>
-            </div>
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">🌾</div>
-              <div class="vocab-card__word">Kharif Crops</div>
-              <div class="vocab-card__definition">Crops that grow in summer season</div>
-            </div>
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">❄️</div>
-              <div class="vocab-card__word">Rabi Crops</div>
-              <div class="vocab-card__definition">Crops that grow in winter season</div>
-            </div>
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">🪴</div>
-              <div class="vocab-card__word">Vegetative Reproduction</div>
-              <div class="vocab-card__definition">Growing new plants from stems, roots, or leaves</div>
-            </div>
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">🌿</div>
-              <div class="vocab-card__word">Seedling</div>
-              <div class="vocab-card__definition">A new plant that has grown from a seed</div>
-            </div>
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">🧑‍🌾</div>
-              <div class="vocab-card__word">Manure</div>
-              <div class="vocab-card__definition">Plants' and animals' wastes used for enriching the soil with nutrients</div>
-            </div>
-            <div class="vocab-card">
-              <div class="vocab-card__emoji">🌾</div>
-              <div class="vocab-card__word">Harvesting</div>
-              <div class="vocab-card__definition">The crops are then cut and gathered</div>
-            </div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🌱</div><div class="vocab-card__word">Germination</div><div class="vocab-card__definition">Seed growing into a new plant</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🫘</div><div class="vocab-card__word">Cotyledons</div><div class="vocab-card__definition">Seed leaves that store food</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">💨</div><div class="vocab-card__word">Dispersal</div><div class="vocab-card__definition">Scattering of seeds</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">👨‍🌾</div><div class="vocab-card__word">Agriculture</div><div class="vocab-card__definition">Growing crops on a large scale</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">💧</div><div class="vocab-card__word">Irrigate</div><div class="vocab-card__definition">To provide water to crops</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🧴</div><div class="vocab-card__word">Pesticides</div><div class="vocab-card__definition">Chemicals to kill pests</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🌾</div><div class="vocab-card__word">Kharif Crops</div><div class="vocab-card__definition">Summer crops</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">❄️</div><div class="vocab-card__word">Rabi Crops</div><div class="vocab-card__definition">Winter crops</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🪴</div><div class="vocab-card__word">Vegetative Reproduction</div><div class="vocab-card__definition">Growing from stems, roots, leaves</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🌿</div><div class="vocab-card__word">Seedling</div><div class="vocab-card__definition">A young plant from a seed</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🧑‍🌾</div><div class="vocab-card__word">Manure</div><div class="vocab-card__definition">Animal waste that enriches soil</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🌾</div><div class="vocab-card__word">Harvesting</div><div class="vocab-card__definition">Cutting and gathering crops</div></div>
           </div>
         </div>
 
-        <!-- Activity 2: Match the Dispersal Method -->
         <div class="lesson-card lesson-card--blue fade-in">
           <div class="lesson-card__header">
             <div class="lesson-card__icon">🎯</div>
-            <div>
-              <div class="lesson-card__title">Match the Seed to its Travel Method!</div>
-              <div class="lesson-card__subtitle">Tap or drag each seed to its travel method! Tap a seed, then tap a method, or drag & drop.</div>
-            </div>
+            <div><div class="lesson-card__title">Match the Seed to its Travel Method!</div><div class="lesson-card__subtitle">Tap a seed, then a method — or drag & drop</div></div>
           </div>
           <div class="lesson-card__body">
             <div id="matchGame" class="match-game">
               <div class="match-status-bar">
                 <div class="match-score">Matched: <span id="matchScoreCount">0</span> of 6 seeds</div>
-                <button class="btn btn--secondary" id="resetMatchBtn" style="padding: 6px 14px; min-height: 38px; font-size: 0.85rem;">🔄 Reset Activity</button>
+                <button class="btn btn--secondary" id="resetMatchBtn" style="padding:6px 14px;min-height:38px;font-size:.85rem;">🔄 Reset Activity</button>
               </div>
-
-              <div class="match-celebration" id="matchCelebration" style="display: none;">
-                🎉 <strong>Brilliant!</strong> You matched all seeds to their correct dispersal methods! ⭐⭐⭐
-              </div>
-
-              <div class="comparison-grid" style="grid-template-columns: 1fr 1fr;">
+              <div class="match-celebration" id="matchCelebration" style="display:none;">🎉 <strong>Brilliant!</strong> You matched all seeds! ⭐⭐⭐</div>
+              <div class="comparison-grid" style="grid-template-columns:1fr 1fr;">
                 <div>
-                  <p style="font-weight:800; margin-bottom:12px; text-align:center;">🌰 Seeds (Tap or Drag)</p>
-                  <div class="drag-container" id="seedBank">
-                    <div class="drag-item" draggable="true" data-match="wind" id="drag-dandelion">🌼 Dandelion</div>
-                    <div class="drag-item" draggable="true" data-match="water" id="drag-coconut">🥥 Coconut</div>
-                    <div class="drag-item" draggable="true" data-match="animal" id="drag-mango">🥭 Mango</div>
-                    <div class="drag-item" draggable="true" data-match="burst" id="drag-pea">🫛 Pea Pod</div>
-                    <div class="drag-item" draggable="true" data-match="wind" id="drag-maple">🍁 Maple Seed</div>
-                    <div class="drag-item" draggable="true" data-match="water" id="drag-lotus">🪷 Lotus Pod</div>
-                  </div>
+                  <p style="font-weight:800;margin-bottom:12px;text-align:center;">🌰 Seeds (Tap or Drag)</p>
+                  <div class="drag-container" id="seedBank"></div>
                 </div>
                 <div>
-                  <p style="font-weight:800; margin-bottom:12px; text-align:center;">🎯 Dispersal Methods</p>
-                  <div style="display: flex; flex-direction: column; gap: 10px;">
-                    <div class="drop-zone" data-accept="wind" id="drop-wind">
-                      <div class="drop-zone__header">
-                        <span>🌬️ Wind Dispersal</span>
-                        <span class="drop-zone__count" id="count-wind">0/2</span>
-                      </div>
-                      <div class="drop-zone__items"></div>
-                    </div>
-                    <div class="drop-zone" data-accept="water" id="drop-water">
-                      <div class="drop-zone__header">
-                        <span>🌊 Water Dispersal</span>
-                        <span class="drop-zone__count" id="count-water">0/2</span>
-                      </div>
-                      <div class="drop-zone__items"></div>
-                    </div>
-                    <div class="drop-zone" data-accept="animal" id="drop-animal">
-                      <div class="drop-zone__header">
-                        <span>🐦 Animal Dispersal</span>
-                        <span class="drop-zone__count" id="count-animal">0/1</span>
-                      </div>
-                      <div class="drop-zone__items"></div>
-                    </div>
-                    <div class="drop-zone" data-accept="burst" id="drop-burst">
-                      <div class="drop-zone__header">
-                        <span>💥 Bursting Open</span>
-                        <span class="drop-zone__count" id="count-burst">0/1</span>
-                      </div>
-                      <div class="drop-zone__items"></div>
-                    </div>
+                  <p style="font-weight:800;margin-bottom:12px;text-align:center;">🎯 Dispersal Methods</p>
+                  <div style="display:flex;flex-direction:column;gap:10px;">
+                    <div class="drop-zone" data-accept="wind"><div class="drop-zone__header"><span>🌬️ Wind Dispersal</span><span class="drop-zone__count">0/2</span></div><div class="drop-zone__items"></div></div>
+                    <div class="drop-zone" data-accept="water"><div class="drop-zone__header"><span>🌊 Water Dispersal</span><span class="drop-zone__count">0/2</span></div><div class="drop-zone__items"></div></div>
+                    <div class="drop-zone" data-accept="animal"><div class="drop-zone__header"><span>🐦 Animal Dispersal</span><span class="drop-zone__count">0/1</span></div><div class="drop-zone__items"></div></div>
+                    <div class="drop-zone" data-accept="burst"><div class="drop-zone__header"><span>💥 Bursting Open</span><span class="drop-zone__count">0/1</span></div><div class="drop-zone__items"></div></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div><!-- end section-activities -->
+      </div>
 
-      <!-- ===== SECTION: Quiz ===== -->
-      <div class="lesson-section" id="section-quiz">
-        <div class="lesson-card">
+      <!-- Quiz -->
+      <div class="lesson-section" data-section="quiz">
+        <div data-quiz="class5-ch1" data-total="7">
+          <div class="lesson-card">
+            <div class="lesson-card__header">
+              <div class="lesson-card__icon">✅</div>
+              <div><div class="lesson-card__title">Quick Check — Test Your Knowledge!</div></div>
+            </div>
+          </div>
+          <div class="quiz-container">
+            <div class="quiz-question">
+              <div class="quiz-question__number">1</div>
+              <div class="quiz-question__text">Seeds are present inside the ___</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="false" data-q="q1"><span class="quiz-option__letter">A</span> Leaves 🍃</div>
+                <div class="quiz-option" data-correct="true" data-q="q1"><span class="quiz-option__letter">B</span> Fruits 🍎</div>
+                <div class="quiz-option" data-correct="false" data-q="q1"><span class="quiz-option__letter">C</span> Flowers 🌸</div>
+                <div class="quiz-option" data-correct="false" data-q="q1"><span class="quiz-option__letter">D</span> Roots 🌳</div>
+              </div>
+              <div class="quiz-feedback" id="q1-feedback"></div>
+              <div class="quiz-explanation" id="q1-expl">💡 Fruits protect seeds inside them.</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">2</div>
+              <div class="quiz-question__text">The process by which a seed grows into a new plant is ___</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="false" data-q="q2"><span class="quiz-option__letter">A</span> Dispersal 💨</div>
+                <div class="quiz-option" data-correct="false" data-q="q2"><span class="quiz-option__letter">B</span> Agriculture 👨‍🌾</div>
+                <div class="quiz-option" data-correct="true" data-q="q2"><span class="quiz-option__letter">C</span> Germination 🌱</div>
+                <div class="quiz-option" data-correct="false" data-q="q2"><span class="quiz-option__letter">D</span> Cotyledon 🫘</div>
+              </div>
+              <div class="quiz-feedback" id="q2-feedback"></div>
+              <div class="quiz-explanation" id="q2-expl">💡 Germination = seed sprouts into a seedling.</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">3</div>
+              <div class="quiz-question__text">Which seed is dispersed by water?</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="false" data-q="q3"><span class="quiz-option__letter">A</span> Xanthium 🪝</div>
+                <div class="quiz-option" data-correct="true" data-q="q3"><span class="quiz-option__letter">B</span> Coconut 🥥</div>
+                <div class="quiz-option" data-correct="false" data-q="q3"><span class="quiz-option__letter">C</span> Maple 🍁</div>
+                <div class="quiz-option" data-correct="false" data-q="q3"><span class="quiz-option__letter">D</span> Mango 🥭</div>
+              </div>
+              <div class="quiz-feedback" id="q3-feedback"></div>
+              <div class="quiz-explanation" id="q3-expl">💡 Coconuts float on water for long distances.</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">4</div>
+              <div class="quiz-question__text">Jowar and Bajra are crops of which season?</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="false" data-q="q4"><span class="quiz-option__letter">A</span> Rabi ❄️</div>
+                <div class="quiz-option" data-correct="true" data-q="q4"><span class="quiz-option__letter">B</span> Kharif ☀️</div>
+                <div class="quiz-option" data-correct="false" data-q="q4"><span class="quiz-option__letter">C</span> Seasonal 🌦️</div>
+                <div class="quiz-option" data-correct="false" data-q="q4"><span class="quiz-option__letter">D</span> None</div>
+              </div>
+              <div class="quiz-feedback" id="q4-feedback"></div>
+              <div class="quiz-explanation" id="q4-expl">💡 Kharif = monsoon/summer crops.</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">5</div>
+              <div class="quiz-question__text">Roots absorb water and minerals from the ___</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="false" data-q="q5"><span class="quiz-option__letter">A</span> Leaves 🍃</div>
+                <div class="quiz-option" data-correct="false" data-q="q5"><span class="quiz-option__letter">B</span> Flowers 🌸</div>
+                <div class="quiz-option" data-correct="false" data-q="q5"><span class="quiz-option__letter">C</span> Stem 🎋</div>
+                <div class="quiz-option" data-correct="true" data-q="q5"><span class="quiz-option__letter">D</span> Soil 🪨🌱</div>
+              </div>
+              <div class="quiz-feedback" id="q5-feedback"></div>
+              <div class="quiz-explanation" id="q5-expl">💡 Roots anchor in soil and draw water.</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">6</div>
+              <div class="quiz-question__text">True or False: Vegetative reproduction is quicker than seed reproduction.</div>
+              <div class="quiz-options" style="grid-template-columns:1fr 1fr;">
+                <div class="quiz-option" data-correct="true" data-q="q6"><span class="quiz-option__letter">✅</span> True</div>
+                <div class="quiz-option" data-correct="false" data-q="q6"><span class="quiz-option__letter">❌</span> False</div>
+              </div>
+              <div class="quiz-feedback" id="q6-feedback"></div>
+              <div class="quiz-explanation" id="q6-expl">💡 Vegetative reproduction skips seed formation.</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">7</div>
+              <div class="quiz-question__text">A potato has small buds called ___</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="true" data-q="q7"><span class="quiz-option__letter">A</span> Eyes 👁️</div>
+                <div class="quiz-option" data-correct="false" data-q="q7"><span class="quiz-option__letter">B</span> Seeds 🌰</div>
+                <div class="quiz-option" data-correct="false" data-q="q7"><span class="quiz-option__letter">C</span> Spores 🍄</div>
+                <div class="quiz-option" data-correct="false" data-q="q7"><span class="quiz-option__letter">D</span> Flowers 🌸</div>
+              </div>
+              <div class="quiz-feedback" id="q7-feedback"></div>
+              <div class="quiz-explanation" id="q7-expl">💡 Potato "eyes" are vegetative buds.</div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:20px;">
+            <button class="btn btn--primary btn--large" id="checkQuizBtn">✅ Check My Answers!</button>
+          </div>
+          <div class="quiz-score" id="quizScore">
+            <div class="quiz-score__stars" id="quizStars"></div>
+            <div class="quiz-score__number" id="quizScoreNum"></div>
+            <div class="quiz-score__label">Great job! Keep learning! 🎉</div>
+            <button class="btn btn--secondary" id="retryQuizBtn" style="margin-top:16px;background:rgba(255,255,255,0.2);color:white;border-color:rgba(255,255,255,0.3);">🔄 Try Again</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end page-class5-ch1 -->
+
+    <!-- =====================================================
+         PAGE: CLASS 4 — CHAPTER 1: FOOD – OUR BASIC NEED
+         ===================================================== -->
+    <div class="content page" id="page-class4-ch1" style="display:none;">
+
+      <div class="chapter-hero">
+        <div class="chapter-hero__overlay" style="position:static;background:linear-gradient(135deg,#ffb347,#ffcc33);padding:36px 24px;border-radius:16px;">
+          <div class="chapter-hero__unit-label">Class 4 • Unit I — Food and Health</div>
+          <h1 class="chapter-hero__title">🍎 Food – Our Basic Need</h1>
+        </div>
+      </div>
+
+      <div class="section-tabs">
+        <button class="section-tab active" data-section="lesson"><span class="section-tab__icon">📖</span><span>Visual Lesson</span></button>
+        <button class="section-tab" data-section="videos"><span class="section-tab__icon">🎬</span><span>Watch & Learn</span></button>
+        <button class="section-tab" data-section="isl"><span class="section-tab__icon">🤟</span><span>ISL Corner</span></button>
+        <button class="section-tab" data-section="activities"><span class="section-tab__icon">🎮</span><span>Activities</span></button>
+        <button class="section-tab" data-section="quiz"><span class="section-tab__icon">✅</span><span>Quiz</span></button>
+      </div>
+
+      <!-- Lesson -->
+      <div class="lesson-section active" data-section="lesson">
+        <div class="lesson-card fade-in">
           <div class="lesson-card__header">
-            <div class="lesson-card__icon">✅</div>
-            <div>
-              <div class="lesson-card__title">Quick Check — Test Your Knowledge!</div>
-              <div class="lesson-card__subtitle">Choose the correct answer for each question</div>
+            <div class="lesson-card__icon">🍽️</div>
+            <div><div class="lesson-card__title">Why Do We Need Food?</div><div class="lesson-card__subtitle">Food gives us energy, helps us grow, and protects us from sickness</div></div>
+          </div>
+          <div class="lesson-card__body">
+            <p>Food is our <span class="keyword">basic need</span>. It helps us:</p>
+            <div class="comparison-grid">
+              <div class="comparison-card"><div class="comparison-card__icon">⚡</div><div class="comparison-card__title">Get Energy</div><div class="comparison-card__desc">To play, run and study</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">💪</div><div class="comparison-card__title">Grow Strong</div><div class="comparison-card__desc">To build our body</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🛡️</div><div class="comparison-card__title">Fight Sickness</div><div class="comparison-card__desc">To stay healthy</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🔧</div><div class="comparison-card__title">Repair Body</div><div class="comparison-card__desc">To fix damaged parts</div></div>
             </div>
           </div>
         </div>
 
-        <div class="quiz-container" id="quizContainer">
-          <!-- Q1 -->
-          <div class="quiz-question" id="q1">
-            <div class="quiz-question__number">1</div>
-            <div class="quiz-question__text">Seeds are present inside the ___</div>
-            <div class="quiz-options">
-              <div class="quiz-option" data-correct="false" data-q="q1" id="q1-a">
-                <span class="quiz-option__letter">A</span> Leaves 🍃
-              </div>
-              <div class="quiz-option" data-correct="true" data-q="q1" id="q1-b">
-                <span class="quiz-option__letter">B</span> Fruits 🍎
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q1" id="q1-c">
-                <span class="quiz-option__letter">C</span> Flowers 🌸
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q1" id="q1-d">
-                <span class="quiz-option__letter">D</span> Roots 🌳
-              </div>
-            </div>
-            <div class="quiz-feedback" id="q1-feedback"></div>
-            <div class="quiz-explanation" id="q1-expl">💡 <strong>Why:</strong> Fruits protect seeds inside them. When animals eat fruits or fruits drop, seeds grow into new plants!</div>
+        <div class="lesson-card lesson-card--orange fade-in">
+          <div class="lesson-card__header">
+            <div class="lesson-card__icon">🥗</div>
+            <div><div class="lesson-card__title">Nutrients in Our Food</div><div class="lesson-card__subtitle">Tiny parts in food that keep us healthy</div></div>
           </div>
-
-          <!-- Q2 -->
-          <div class="quiz-question" id="q2">
-            <div class="quiz-question__number">2</div>
-            <div class="quiz-question__text">The process by which a seed grows into a new plant is called ___</div>
-            <div class="quiz-options">
-              <div class="quiz-option" data-correct="false" data-q="q2" id="q2-a">
-                <span class="quiz-option__letter">A</span> Dispersal 💨
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q2" id="q2-b">
-                <span class="quiz-option__letter">B</span> Agriculture 👨‍🌾
-              </div>
-              <div class="quiz-option" data-correct="true" data-q="q2" id="q2-c">
-                <span class="quiz-option__letter">C</span> Germination 🌱
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q2" id="q2-d">
-                <span class="quiz-option__letter">D</span> Cotyledon 🫘
-              </div>
+          <div class="lesson-card__body">
+            <div class="comparison-grid">
+              <div class="comparison-card" style="background:#fef9e7;"><div class="comparison-card__icon">⚡</div><div class="comparison-card__title">Carbohydrates</div><div class="comparison-card__desc"><strong>Energy-Giving</strong><br>Rice, roti, potato, sugar</div></div>
+              <div class="comparison-card" style="background:#fce9f0;"><div class="comparison-card__icon">🧈</div><div class="comparison-card__title">Fats</div><div class="comparison-card__desc"><strong>Stored Energy + Warmth</strong><br>Ghee, oil, butter, nuts</div></div>
+              <div class="comparison-card" style="background:#e8f5e9;"><div class="comparison-card__icon">💪</div><div class="comparison-card__title">Proteins</div><div class="comparison-card__desc"><strong>Body-Building</strong><br>Dal, eggs, milk, paneer</div></div>
+              <div class="comparison-card" style="background:#e3f2fd;"><div class="comparison-card__icon">🛡️</div><div class="comparison-card__title">Vitamins & Minerals</div><div class="comparison-card__desc"><strong>Protective</strong><br>Fruits, vegetables, milk</div></div>
+              <div class="comparison-card" style="background:#e0f7fa;"><div class="comparison-card__icon">💧</div><div class="comparison-card__title">Water</div><div class="comparison-card__desc">Keeps our body hydrated</div></div>
+              <div class="comparison-card" style="background:#fff3e0;"><div class="comparison-card__icon">🧹</div><div class="comparison-card__title">Roughage / Fibre</div><div class="comparison-card__desc">Cleans our stomach</div></div>
             </div>
-            <div class="quiz-feedback" id="q2-feedback"></div>
-            <div class="quiz-explanation" id="q2-expl">💡 <strong>Why:</strong> Germination is the biological process where a seed absorbs water and sprouts into a seedling.</div>
-          </div>
-
-          <!-- Q3 -->
-          <div class="quiz-question" id="q3">
-            <div class="quiz-question__number">3</div>
-            <div class="quiz-question__text">Which of the following seeds is dispersed by water? 🌊</div>
-            <div class="quiz-options">
-              <div class="quiz-option" data-correct="false" data-q="q3" id="q3-a">
-                <span class="quiz-option__letter">A</span> Xanthium (Cocklebur) 🪝
-              </div>
-              <div class="quiz-option" data-correct="true" data-q="q3" id="q3-b">
-                <span class="quiz-option__letter">B</span> Coconut 🥥
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q3" id="q3-c">
-                <span class="quiz-option__letter">C</span> Maple 🍁
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q3" id="q3-d">
-                <span class="quiz-option__letter">D</span> Mango 🥭
-              </div>
-            </div>
-            <div class="quiz-feedback" id="q3-feedback"></div>
-            <div class="quiz-explanation" id="q3-expl">💡 <strong>Why:</strong> Coconuts have a thick, fibrous outer layer filled with air that allows them to float long distances on water!</div>
-          </div>
-
-          <!-- Q4 -->
-          <div class="quiz-question" id="q4">
-            <div class="quiz-question__number">4</div>
-            <div class="quiz-question__text">Jowar and Bajra are the crops of which season?</div>
-            <div class="quiz-options">
-              <div class="quiz-option" data-correct="false" data-q="q4" id="q4-a">
-                <span class="quiz-option__letter">A</span> Rabi (Winter) ❄️
-              </div>
-              <div class="quiz-option" data-correct="true" data-q="q4" id="q4-b">
-                <span class="quiz-option__letter">B</span> Kharif (Summer) ☀️
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q4" id="q4-c">
-                <span class="quiz-option__letter">C</span> Seasonal 🌦️
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q4" id="q4-d">
-                <span class="quiz-option__letter">D</span> None of these
-              </div>
-            </div>
-            <div class="quiz-feedback" id="q4-feedback"></div>
-            <div class="quiz-explanation" id="q4-expl">💡 <strong>Why:</strong> Kharif crops like rice, jowar, bajra, and maize grow in the monsoon/summer season (June-October).</div>
-          </div>
-
-          <!-- Q5 -->
-          <div class="quiz-question" id="q5">
-            <div class="quiz-question__number">5</div>
-            <div class="quiz-question__text">The roots of the plants absorb water and minerals from the ___</div>
-            <div class="quiz-options">
-              <div class="quiz-option" data-correct="false" data-q="q5" id="q5-a">
-                <span class="quiz-option__letter">A</span> Leaves 🍃
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q5" id="q5-b">
-                <span class="quiz-option__letter">B</span> Flowers 🌸
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q5" id="q5-c">
-                <span class="quiz-option__letter">C</span> Stem 🎋
-              </div>
-              <div class="quiz-option" data-correct="true" data-q="q5" id="q5-d">
-                <span class="quiz-option__letter">D</span> Soil 🪨🌱
-              </div>
-            </div>
-            <div class="quiz-feedback" id="q5-feedback"></div>
-            <div class="quiz-explanation" id="q5-expl">💡 <strong>Why:</strong> Roots anchor into the soil and draw water and dissolved nutrients up through the stem to nourish the plant.</div>
-          </div>
-
-          <!-- Q6: True / False -->
-          <div class="quiz-question" id="q6">
-            <div class="quiz-question__number">6</div>
-            <div class="quiz-question__text">True or False: Vegetative reproduction is much quicker than reproducing through seeds.</div>
-            <div class="quiz-options" style="grid-template-columns: 1fr 1fr;">
-              <div class="quiz-option" data-correct="true" data-q="q6" id="q6-a">
-                <span class="quiz-option__letter">✅</span> True
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q6" id="q6-b">
-                <span class="quiz-option__letter">❌</span> False
-              </div>
-            </div>
-            <div class="quiz-feedback" id="q6-feedback"></div>
-            <div class="quiz-explanation" id="q6-expl">💡 <strong>Why:</strong> True! Plants growing from stem cuttings, tubers, or leaves skip flowering and seed formation, growing much faster.</div>
-          </div>
-
-          <!-- Q7 -->
-          <div class="quiz-question" id="q7">
-            <div class="quiz-question__number">7</div>
-            <div class="quiz-question__text">A potato has small buds called ___ on its surface.</div>
-            <div class="quiz-options">
-              <div class="quiz-option" data-correct="true" data-q="q7" id="q7-a">
-                <span class="quiz-option__letter">A</span> Eyes 👁️
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q7" id="q7-b">
-                <span class="quiz-option__letter">B</span> Seeds 🌰
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q7" id="q7-c">
-                <span class="quiz-option__letter">C</span> Spores 🍄
-              </div>
-              <div class="quiz-option" data-correct="false" data-q="q7" id="q7-d">
-                <span class="quiz-option__letter">D</span> Flowers 🌸
-              </div>
-            </div>
-            <div class="quiz-feedback" id="q7-feedback"></div>
-            <div class="quiz-explanation" id="q7-expl">💡 <strong>Why:</strong> Potato tubers have small depressions called "eyes" which are vegetative buds that sprout into new potato plants!</div>
           </div>
         </div>
 
-        <div style="text-align: center; margin-top: 20px;">
-          <button class="btn btn--primary btn--large" id="checkQuizBtn">
-            ✅ Check My Answers!
-          </button>
+        <div class="lesson-card lesson-card--blue fade-in">
+          <div class="lesson-card__header">
+            <div class="lesson-card__icon">⚖️</div>
+            <div><div class="lesson-card__title">Balanced Diet</div><div class="lesson-card__subtitle">Eating the right amount of all nutrients every day</div></div>
+          </div>
+          <div class="lesson-card__body">
+            <p>A <span class="keyword">balanced diet</span> contains the right amount of all nutrients. It keeps us healthy and full of energy.</p>
+            <div class="callout callout--info">
+              <span class="callout__icon">💡</span>
+              <span class="callout__text">Eat a colourful plate: brown (rice/roti), white (milk/curd), green (vegetables), red/orange (fruits) — every day!</span>
+            </div>
+          </div>
         </div>
 
-        <div class="quiz-score" id="quizScore">
-          <div class="quiz-score__stars" id="quizStars"></div>
-          <div class="quiz-score__number" id="quizScoreNum"></div>
-          <div class="quiz-score__label">Great job! Keep learning! 🎉</div>
-          <button class="btn btn--secondary" id="retryQuizBtn" style="margin-top: 16px; background: rgba(255,255,255,0.2); color: white; border-color: rgba(255,255,255,0.3);">
-            🔄 Try Again
-          </button>
+        <div class="lesson-card lesson-card--teal fade-in">
+          <div class="lesson-card__header">
+            <div class="lesson-card__icon">🧼</div>
+            <div><div class="lesson-card__title">Good Eating Habits</div><div class="lesson-card__subtitle">How to eat healthy and stay safe</div></div>
+          </div>
+          <div class="lesson-card__body">
+            <div class="comparison-grid">
+              <div class="comparison-card"><div class="comparison-card__icon">🧼</div><div class="comparison-card__title">Wash Hands</div><div class="comparison-card__desc">Before every meal</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">⏱️</div><div class="comparison-card__title">Eat on Time</div><div class="comparison-card__desc">Fixed meal times</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🤐</div><div class="comparison-card__title">Chew Well</div><div class="comparison-card__desc">Mouth closed</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🚫</div><div class="comparison-card__title">Avoid Street Food</div><div class="comparison-card__desc">Uncovered food</div></div>
+            </div>
+          </div>
         </div>
-      </div><!-- end section-quiz -->
 
-    </div><!-- end page-ch1 -->
-
-  </main>
-
-  <!-- ==================== ACCESSIBLE ISL MODAL ==================== -->
-  <div class="modal-overlay" id="islModal" role="dialog" aria-modal="true" aria-labelledby="islModalTitle">
-    <div class="modal-card">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <span class="modal-title-emoji" id="islModalEmoji">🌱</span>
-          <h2 class="modal-title" id="islModalTitle">Seed</h2>
-        </div>
-        <button class="modal-close-btn" id="closeIslModal" aria-label="Close modal">✕</button>
-      </div>
-      <div class="modal-body">
-        <div class="isl-demo-box">
-          <div class="isl-demo-graphic" id="islModalGraphic">🌰</div>
-          <div class="isl-handshape-title" id="islModalGesture">Pinch & Sow Sign Gesture</div>
-        </div>
-        <div class="isl-step-card">
-          <div class="isl-step-num">1</div>
-          <div class="isl-step-text" id="islModalStep1">Hold thumb and index finger close together to show the tiny size of a seed.</div>
-        </div>
-        <div class="isl-step-card">
-          <div class="isl-step-num">2</div>
-          <div class="isl-step-text" id="islModalStep2">Move hand downward towards the ground as if planting the seed in fertile soil.</div>
-        </div>
-        <div class="callout callout--tip" style="margin: 0;">
-          <span class="callout__icon">💡</span>
-          <span class="callout__text" id="islModalMeaning"><strong>Scientific Meaning:</strong> A fertilized ovule containing a plant embryo and food store that can grow into a new plant.</span>
+        <div class="lesson-card lesson-card--pink fade-in">
+          <div class="lesson-card__header">
+            <div class="lesson-card__icon">🥫</div>
+            <div><div class="lesson-card__title">Food Preservation</div><div class="lesson-card__subtitle">Ways to save food so it doesn't spoil</div></div>
+          </div>
+          <div class="lesson-card__body">
+            <div class="comparison-grid">
+              <div class="comparison-card"><div class="comparison-card__icon">🧊</div><div class="comparison-card__title">Refrigeration</div><div class="comparison-card__desc">Milk, vegetables stay cold</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">☀️</div><div class="comparison-card__title">Sun Drying</div><div class="comparison-card__desc">Removes water — chillies, fish</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🧂</div><div class="comparison-card__title">Pickling</div><div class="comparison-card__desc">Salt + oil — mangoes, lemons</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🥫</div><div class="comparison-card__title">Canning</div><div class="comparison-card__desc">Heating + sealing jars</div></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="btn btn--secondary btn--sm" id="islPrevBtn" style="padding: 6px 14px; min-height: 38px;">⬅ Previous Sign</button>
-        <span class="isl-counter" id="islCounter">1 / 12</span>
-        <button class="btn btn--secondary btn--sm" id="islNextBtn" style="padding: 6px 14px; min-height: 38px;">Next Sign ➡</button>
-      </div>
-    </div>
-  </div>
 
-  <!-- ==================== CHAPTER PREVIEW MODAL ==================== -->
-  <div class="modal-overlay" id="chapterModal" role="dialog" aria-modal="true" aria-labelledby="chModalTitle">
-    <div class="modal-card">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <span class="modal-title-emoji" id="chModalEmoji">🍎</span>
-          <h2 class="modal-title" id="chModalTitle">Chapter 2: Food and Health</h2>
+      <!-- Videos -->
+      <div class="lesson-section" data-section="videos">
+        <div class="lesson-card">
+          <div class="lesson-card__header"><div class="lesson-card__icon">🎬</div><div><div class="lesson-card__title">Watch & Learn</div><div class="lesson-card__subtitle">Educational videos</div></div></div>
         </div>
-        <button class="modal-close-btn" id="closeChModal" aria-label="Close modal">✕</button>
-      </div>
-      <div class="modal-body">
-        <div class="callout callout--info">
-          <span class="callout__icon">📖</span>
-          <span class="callout__text" id="chModalDesc">Coming soon to the platform! This chapter explores how nutrition and hygiene keep our bodies strong.</span>
+        <div class="video-grid">
+          <div class="video-slot"><div class="video-slot__embed"><!-- YOUTUBE LINK SLOT 1: Nutrients --></div><div class="video-slot__info"><div class="video-slot__title">🥗 Nutrients in Food</div><div class="video-slot__desc">Carbohydrates, proteins, fats and vitamins</div></div></div>
+          <div class="video-slot"><div class="video-slot__embed"><!-- YOUTUBE LINK SLOT 2: Balanced Diet --></div><div class="video-slot__info"><div class="video-slot__title">⚖️ What is a Balanced Diet?</div></div></div>
+          <div class="video-slot"><div class="video-slot__embed"><!-- YOUTUBE LINK SLOT 3: Good Habits --></div><div class="video-slot__info"><div class="video-slot__title">🧼 Good Eating Habits</div></div></div>
+          <div class="video-slot"><div class="video-slot__embed"><!-- YOUTUBE LINK SLOT 4: Preservation --></div><div class="video-slot__info"><div class="video-slot__title">🥫 How We Preserve Food</div></div></div>
         </div>
-        <h4 style="font-weight: 800; margin-top: 4px;">Topics covered in this unit:</h4>
-        <ul id="chModalTopics" style="padding-left: 20px; line-height: 2; font-size: 0.95rem;">
-          <li>🍎 Carbohydrates, Fats & Proteins</li>
-          <li>🥗 Vitamins & Minerals</li>
-          <li>🥛 Water, Roughage & Balanced Diet</li>
-          <li>🦠 Deficiency Diseases & Hygiene</li>
-        </ul>
       </div>
-      <div class="modal-footer" style="justify-content: flex-end;">
-        <button class="btn btn--primary btn--sm" id="closeChModalBtn" style="padding: 6px 20px; min-height: 38px;">Got it! 👍</button>
+
+      <!-- ISL -->
+      <div class="lesson-section" data-section="isl">
+        <div class="lesson-card lesson-card--purple">
+          <div class="lesson-card__header"><div class="lesson-card__icon">🤟</div><div><div class="lesson-card__title">ISL Corner — Sign Language Vocabulary</div><div class="lesson-card__subtitle">Tap any card to see the sign</div></div></div>
+        </div>
+        <div class="isl-grid">
+          <div class="isl-card" data-isl="nutrients"><span class="isl-card__emoji">🍎</span><span class="isl-card__word">Nutrients</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="carbohydrates"><span class="isl-card__emoji">⚡</span><span class="isl-card__word">Carbohydrates</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="fats"><span class="isl-card__emoji">🧈</span><span class="isl-card__word">Fats</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="proteins"><span class="isl-card__emoji">💪</span><span class="isl-card__word">Proteins</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="vitamins"><span class="isl-card__emoji">🛡️</span><span class="isl-card__word">Vitamins</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="minerals"><span class="isl-card__emoji">💎</span><span class="isl-card__word">Minerals</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="water"><span class="isl-card__emoji">💧</span><span class="isl-card__word">Water</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="balanced-diet"><span class="isl-card__emoji">⚖️</span><span class="isl-card__word">Balanced Diet</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="roughage"><span class="isl-card__emoji">🧹</span><span class="isl-card__word">Roughage / Fibre</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="preservation"><span class="isl-card__emoji">🥫</span><span class="isl-card__word">Preservation</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="hygiene"><span class="isl-card__emoji">🧼</span><span class="isl-card__word">Hygiene</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="chewing"><span class="isl-card__emoji">😬</span><span class="isl-card__word">Chewing</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Confetti Container -->
-  <div class="confetti-container" id="confettiContainer"></div>
+      <!-- Activities -->
+      <div class="lesson-section" data-section="activities">
+        <div class="lesson-card fade-in">
+          <div class="lesson-card__header"><div class="lesson-card__icon">📝</div><div><div class="lesson-card__title">Words to Remember</div></div></div>
+          <div class="vocab-grid">
+            <div class="vocab-card"><div class="vocab-card__emoji">🥗</div><div class="vocab-card__word">Nutrients</div><div class="vocab-card__definition">Tiny parts in food that keep us healthy</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">⚡</div><div class="vocab-card__word">Carbohydrates</div><div class="vocab-card__definition">Energy-giving nutrient — rice, roti, potato</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🧈</div><div class="vocab-card__word">Fats</div><div class="vocab-card__definition">Store energy and keep us warm</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">💪</div><div class="vocab-card__word">Proteins</div><div class="vocab-card__definition">Help us grow and repair our body</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🛡️</div><div class="vocab-card__word">Vitamins</div><div class="vocab-card__definition">Protect us from sickness</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">💎</div><div class="vocab-card__word">Minerals</div><div class="vocab-card__definition">Need for strong bones and teeth</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">💧</div><div class="vocab-card__word">Water</div><div class="vocab-card__definition">Makes up most of our body</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">⚖️</div><div class="vocab-card__word">Balanced Diet</div><div class="vocab-card__definition">Right amount of all nutrients</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🧹</div><div class="vocab-card__word">Roughage</div><div class="vocab-card__definition">Fibre that cleans our stomach</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🥫</div><div class="vocab-card__word">Preservation</div><div class="vocab-card__definition">Saving food so it doesn't spoil</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">🧼</div><div class="vocab-card__word">Hygiene</div><div class="vocab-card__definition">Keeping ourselves and food clean</div></div>
+            <div class="vocab-card"><div class="vocab-card__emoji">😬</div><div class="vocab-card__word">Chewing</div><div class="vocab-card__definition">Biting food into small pieces</div></div>
+          </div>
+        </div>
 
-  <!-- ==================== FOOTER ==================== -->
-  <footer class="footer">
-    <div class="footer__content">
-      <p>🌱 <strong>Learn with Eyes</strong> — Visual Learning Platform for Deaf Students</p>
-      <p class="footer__sub">Designed for Anushruti Academy for the Deaf (IIT Roorkee) • Class 5 Science (EVS) Curriculum</p>
-    </div>
-  </footer>
+        <div class="lesson-card lesson-card--blue fade-in">
+          <div class="lesson-card__header">
+            <div class="lesson-card__icon">🎯</div>
+            <div><div class="lesson-card__title">Match the Food to its Nutrient!</div><div class="lesson-card__subtitle">Tap a food, then a nutrient — or drag & drop</div></div>
+          </div>
+          <div class="lesson-card__body">
+            <div class="match-game">
+              <div class="match-status-bar">
+                <div class="match-score">Matched: <span id="matchScoreCount">0</span> of 8 foods</div>
+                <button class="btn btn--secondary" id="resetMatchBtn" style="padding:6px 14px;min-height:38px;font-size:.85rem;">🔄 Reset Activity</button>
+              </div>
+              <div class="match-celebration" id="matchCelebration" style="display:none;">🎉 <strong>Brilliant!</strong> You matched all foods! ⭐⭐⭐</div>
+              <div class="comparison-grid" style="grid-template-columns:1fr 1fr;">
+                <div>
+                  <p style="font-weight:800;margin-bottom:12px;text-align:center;">🍽️ Foods (Tap or Drag)</p>
+                  <div class="drag-container" id="seedBank"></div>
+                </div>
+                <div>
+                  <p style="font-weight:800;margin-bottom:12px;text-align:center;">🥗 Nutrients</p>
+                  <div style="display:flex;flex-direction:column;gap:10px;">
+                    <div class="drop-zone" data-accept="carbs"><div class="drop-zone__header"><span>⚡ Energy-Giving</span><span class="drop-zone__count">0/2</span></div><div class="drop-zone__items"></div></div>
+                    <div class="drop-zone" data-accept="fats"><div class="drop-zone__header"><span>🧈 Stored Energy</span><span class="drop-zone__count">0/2</span></div><div class="drop-zone__items"></div></div>
+                    <div class="drop-zone" data-accept="protein"><div class="drop-zone__header"><span>💪 Body-Building</span><span class="drop-zone__count">0/2</span></div><div class="drop-zone__items"></div></div>
+                    <div class="drop-zone" data-accept="vitamins"><div class="drop-zone__header"><span>🛡️ Protective</span><span class="drop-zone__count">0/2</span></div><div class="drop-zone__items"></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <script src="app.js"></script>
-</body>
-</html>
+      <!-- Quiz -->
+      <div class="lesson-section" data-section="quiz">
+        <div data-quiz="class4-ch1" data-total="7">
+          <div class="lesson-card">
+            <div class="lesson-card__header"><div class="lesson-card__icon">✅</div><div><div class="lesson-card__title">Quick Check — Test Your Knowledge!</div></div></div>
+          </div>
+          <div class="quiz-container">
+            <div class="quiz-question">
+              <div class="quiz-question__number">1</div>
+              <div class="quiz-question__text">Which nutrient gives us energy to play and run?</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="false" data-q="q1"><span class="quiz-option__letter">A</span> Proteins 💪</div>
+                <div class="quiz-option" data-correct="true" data-q="q1"><span class="quiz-option__letter">B</span> Carbohydrates ⚡</div>
+                <div class="quiz-option" data-correct="false" data-q="q1"><span class="quiz-option__letter">C</span> Vitamins 🛡️</div>
+                <div class="quiz-option" data-correct="false" data-q="q1"><span class="quiz-option__letter">D</span> Water 💧</div>
+              </div>
+              <div class="quiz-feedback" id="q1-feedback"></div>
+              <div class="quiz-explanation" id="q1-expl">💡 Rice, roti and potato have carbohydrates — they give us energy.</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">2</div>
+              <div class="quiz-question__text">Which nutrient helps our body grow and repair?</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="true" data-q="q2"><span class="quiz-option__letter">A</span> Proteins 💪</div>
+                <div class="quiz-option" data-correct="false" data-q="q2"><span class="quiz-option__letter">B</span> Fats 🧈</div>
+                <div class="quiz-option" data-correct="false" data-q="q2"><span class="quiz-option__letter">C</span> Carbohydrates ⚡</div>
+                <div class="quiz-option" data-correct="false" data-q="q2"><span class="quiz-option__letter">D</span> Roughage 🧹</div>
+              </div>
+              <div class="quiz-feedback" id="q2-feedback"></div>
+              <div class="quiz-explanation" id="q2-expl">💡 Dal, eggs, milk and paneer are rich in proteins.</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">3</div>
+              <div class="quiz-question__text">Vitamins and minerals are called ___ nutrients.</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="false" data-q="q3"><span class="quiz-option__letter">A</span> Energy-giving ⚡</div>
+                <div class="quiz-option" data-correct="false" data-q="q3"><span class="quiz-option__letter">B</span> Body-building 💪</div>
+                <div class="quiz-option" data-correct="true" data-q="q3"><span class="quiz-option__letter">C</span> Protective 🛡️</div>
+                <div class="quiz-option" data-correct="false" data-q="q3"><span class="quiz-option__letter">D</span> Stored 🧈</div>
+              </div>
+              <div class="quiz-feedback" id="q3-feedback"></div>
+              <div class="quiz-explanation" id="q3-expl">💡 They protect us from diseases.</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">4</div>
+              <div class="quiz-question__text">A diet with the right amount of all nutrients is called ___</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="false" data-q="q4"><span class="quiz-option__letter">A</span> Junk food</div>
+                <div class="quiz-option" data-correct="true" data-q="q4"><span class="quiz-option__letter">B</span> Balanced diet ⚖️</div>
+                <div class="quiz-option" data-correct="false" data-q="q4"><span class="quiz-option__letter">C</span> Snack diet</div>
+                <div class="quiz-option" data-correct="false" data-q="q4"><span class="quiz-option__letter">D</span> Liquid diet</div>
+              </div>
+              <div class="quiz-feedback" id="q4-feedback"></div>
+              <div class="quiz-explanation" id="q4-expl">💡 A balanced diet keeps us healthy and energetic.</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">5</div>
+              <div class="quiz-question__text">Which of these is a good eating habit?</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="true" data-q="q5"><span class="quiz-option__letter">A</span> Washing hands before meals 🧼</div>
+                <div class="quiz-option" data-correct="false" data-q="q5"><span class="quiz-option__letter">B</span> Eating uncovered street food</div>
+                <div class="quiz-option" data-correct="false" data-q="q5"><span class="quiz-option__letter">C</span> Talking while chewing</div>
+                <div class="quiz-option" data-correct="false" data-q="q5"><span class="quiz-option__letter">D</span> Skipping breakfast</div>
+              </div>
+              <div class="quiz-feedback" id="q5-feedback"></div>
+              <div class="quiz-explanation" id="q5-expl">💡 Always wash hands before eating — hygiene matters!</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">6</div>
+              <div class="quiz-question__text">Which method uses cold temperature to preserve food?</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="false" data-q="q6"><span class="quiz-option__letter">A</span> Sun drying ☀️</div>
+                <div class="quiz-option" data-correct="true" data-q="q6"><span class="quiz-option__letter">B</span> Refrigeration 🧊</div>
+                <div class="quiz-option" data-correct="false" data-q="q6"><span class="quiz-option__letter">C</span> Pickling 🧂</div>
+                <div class="quiz-option" data-correct="false" data-q="q6"><span class="quiz-option__letter">D</span> Canning 🥫</div>
+              </div>
+              <div class="quiz-feedback" id="q6-feedback"></div>
+              <div class="quiz-explanation" id="q6-expl">💡 Cold temperatures slow down germ growth.</div>
+            </div>
+            <div class="quiz-question">
+              <div class="quiz-question__number">7</div>
+              <div class="quiz-question__text">Roughage (fibre) helps to ___</div>
+              <div class="quiz-options">
+                <div class="quiz-option" data-correct="false" data-q="q7"><span class="quiz-option__letter">A</span> Build muscles 💪</div>
+                <div class="quiz-option" data-correct="false" data-q="q7"><span class="quiz-option__letter">B</span> Give instant energy ⚡</div>
+                <div class="quiz-option" data-correct="true" data-q="q7"><span class="quiz-option__letter">C</span> Clean our stomach 🧹</div>
+                <div class="quiz-option" data-correct="false" data-q="q7"><span class="quiz-option__letter">D</span> Keep us warm 🧈</div>
+              </div>
+              <div class="quiz-feedback" id="q7-feedback"></div>
+              <div class="quiz-explanation" id="q7-expl">💡 Fibre in vegetables and whole grains cleans our stomach.</div>
+            </div>
+          </div>
+          <div style="text-align:center;margin-top:20px;"><button class="btn btn--primary btn--large" id="checkQuizBtn">✅ Check My Answers!</button></div>
+          <div class="quiz-score" id="quizScore">
+            <div class="quiz-score__stars" id="quizStars"></div>
+            <div class="quiz-score__number" id="quizScoreNum"></div>
+            <div class="quiz-score__label">Great job! Keep learning! 🎉</div>
+            <button class="btn btn--secondary" id="retryQuizBtn" style="margin-top:16px;background:rgba(255,255,255,0.2);color:white;border-color:rgba(255,255,255,0.3);">🔄 Try Again</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end page-class4-ch1 -->
+
+    <!-- =====================================================
+         PAGE: CLASS 4 — CHAPTER 2: TEETH, MICROBES & DIGESTION
+         ===================================================== -->
+    <div class="content page" id="page-class4-ch2" style="display:none;">
+
+      <div class="chapter-hero">
+        <div class="chapter-hero__overlay" style="position:static;background:linear-gradient(135deg,#5dade2,#48c9b0);padding:36px 24px;border-radius:16px;">
+          <div class="chapter-hero__unit-label">Class 4 • Unit I — Food and Health</div>
+          <h1 class="chapter-hero__title">🦷 Teeth, Microbes & Digestion</h1>
+        </div>
+      </div>
+
+      <div class="section-tabs">
+        <button class="section-tab active" data-section="lesson"><span class="section-tab__icon">📖</span><span>Visual Lesson</span></button>
+        <button class="section-tab" data-section="videos"><span class="section-tab__icon">🎬</span><span>Watch & Learn</span></button>
+        <button class="section-tab" data-section="isl"><span class="section-tab__icon">🤟</span><span>ISL Corner</span></button>
+        <button class="section-tab" data-section="activities"><span class="section-tab__icon">🎮</span><span>Activities</span></button>
+        <button class="section-tab" data-section="quiz"><span class="section-tab__icon">✅</span><span>Quiz</span></button>
+      </div>
+
+      <!-- Lesson -->
+      <div class="lesson-section active" data-section="lesson">
+        <div class="lesson-card fade-in">
+          <div class="lesson-card__header">
+            <div class="lesson-card__icon">🦷</div>
+            <div><div class="lesson-card__title">Two Sets of Teeth</div><div class="lesson-card__subtitle">Milk teeth and permanent teeth</div></div>
+          </div>
+          <div class="lesson-card__body">
+            <div class="comparison-grid">
+              <div class="comparison-card" style="background:#fce9f0;"><div class="comparison-card__icon">👶</div><div class="comparison-card__title">Milk / Temporary Teeth</div><div class="comparison-card__desc"><strong>20 teeth</strong><br>Start appearing around 6 months old</div></div>
+              <div class="comparison-card" style="background:#e3f2fd;"><div class="comparison-card__icon">🧍</div><div class="comparison-card__title">Permanent Teeth</div><div class="comparison-card__desc"><strong>32 teeth</strong><br>Replaces milk teeth as we grow</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-card lesson-card--purple fade-in">
+          <div class="lesson-card__header">
+            <div class="lesson-card__icon">🔬</div>
+            <div><div class="lesson-card__title">Structure of a Tooth</div><div class="lesson-card__subtitle">Crown, root, enamel, dentine and pulp</div></div>
+          </div>
+          <div class="lesson-card__body">
+            <div class="comparison-grid">
+              <div class="comparison-card"><div class="comparison-card__icon">👑</div><div class="comparison-card__title">Crown</div><div class="comparison-card__desc">Visible top part</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🌳</div><div class="comparison-card__title">Root</div><div class="comparison-card__desc">Hidden part inside gums</div></div>
+              <div class="comparison-card" style="background:#fff;"><div class="comparison-card__icon">💎</div><div class="comparison-card__title">Enamel</div><div class="comparison-card__desc">Hardest white outer shell</div></div>
+              <div class="comparison-card" style="background:#fef9e7;"><div class="comparison-card__icon">🟡</div><div class="comparison-card__title">Dentine</div><div class="comparison-card__desc">Yellow middle layer</div></div>
+              <div class="comparison-card" style="background:#fce9f0;"><div class="comparison-card__icon">🩸</div><div class="comparison-card__title">Pulp</div><div class="comparison-card__desc">Soft inner core — nerves & blood</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-card lesson-card--orange fade-in">
+          <div class="lesson-card__header">
+            <div class="lesson-card__icon">✂️</div>
+            <div><div class="lesson-card__title">Kinds of Teeth</div><div class="lesson-card__subtitle">Different teeth do different jobs</div></div>
+          </div>
+          <div class="lesson-card__body">
+            <div class="comparison-grid">
+              <div class="comparison-card"><div class="comparison-card__icon">✂️</div><div class="comparison-card__title">Incisors (8)</div><div class="comparison-card__desc">Flat front — Biting & cutting</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🗡️</div><div class="comparison-card__title">Canines (4)</div><div class="comparison-card__desc">Pointy side — Tearing food</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🔨</div><div class="comparison-card__title">Premolars (8)</div><div class="comparison-card__desc">Broad middle — Crushing & cracking</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">⚙️</div><div class="comparison-card__title">Molars (12)</div><div class="comparison-card__desc">Large flat back — Grinding & chewing</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-card lesson-card--teal fade-in">
+          <div class="lesson-card__header">
+            <div class="lesson-card__icon">🪥</div>
+            <div><div class="lesson-card__title">Tooth Decay & Care</div><div class="lesson-card__subtitle">How cavities form — and how to prevent them</div></div>
+          </div>
+          <div class="lesson-card__body">
+            <div class="callout callout--info">
+              <span class="callout__icon">⚠️</span>
+              <span class="callout__text"><strong>Cavity chain:</strong> Sweet food → Sticky germs (plaque) → Acid forms → Hole (cavity)</span>
+            </div>
+            <div class="comparison-grid">
+              <div class="comparison-card"><div class="comparison-card__icon">🪥</div><div class="comparison-card__title">Brush Twice</div><div class="comparison-card__desc">Up and down motion</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🧵</div><div class="comparison-card__title">Floss</div><div class="comparison-card__desc">Between teeth</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">👅</div><div class="comparison-card__title">Clean Tongue</div><div class="comparison-card__desc">Every morning</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🍎</div><div class="comparison-card__title">Eat Fruits</div><div class="comparison-card__desc">Instead of sticky candies</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-card lesson-card--pink fade-in">
+          <div class="lesson-card__header">
+            <div class="lesson-card__icon">🦠</div>
+            <div><div class="lesson-card__title">Microbes — Tiny Living Things</div><div class="lesson-card__subtitle">Some are harmful, some are helpful!</div></div>
+          </div>
+          <div class="lesson-card__body">
+            <div class="comparison-grid">
+              <div class="comparison-card" style="background:#fef9e7;"><div class="comparison-card__icon">🦠</div><div class="comparison-card__title">Bacteria</div><div class="comparison-card__desc">Typhoid ⚠️ / Curd from milk ✅</div></div>
+              <div class="comparison-card" style="background:#fce9f0;"><div class="comparison-card__icon">🍄</div><div class="comparison-card__title">Fungi</div><div class="comparison-card__desc">Ringworm ⚠️ / Soft bread with yeast ✅</div></div>
+              <div class="comparison-card" style="background:#e3f2fd;"><div class="comparison-card__icon">🤧</div><div class="comparison-card__title">Virus</div><div class="comparison-card__desc">Flu, cold, polio ⚠️</div></div>
+              <div class="comparison-card" style="background:#fff3e0;"><div class="comparison-card__icon">🦟</div><div class="comparison-card__title">Protozoa</div><div class="comparison-card__desc">Malaria ⚠️</div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-card fade-in">
+          <div class="lesson-card__header">
+            <div class="lesson-card__icon">🍎➡️⚡</div>
+            <div><div class="lesson-card__title">Digestion — From Food to Energy</div><div class="lesson-card__subtitle">The journey of food through our body</div></div>
+          </div>
+          <div class="lesson-card__body">
+            <div class="comparison-grid">
+              <div class="comparison-card"><div class="comparison-card__icon">👄</div><div class="comparison-card__title">1. Mouth</div><div class="comparison-card__desc">Teeth chew + saliva mixes</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🥖</div><div class="comparison-card__title">2. Food Pipe</div><div class="comparison-card__desc">Pushes food to stomach</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🫄</div><div class="comparison-card__title">3. Stomach</div><div class="comparison-card__desc">Juices churn food into paste</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🌀</div><div class="comparison-card__title">4. Small Intestine</div><div class="comparison-card__desc">Nutrients absorbed into blood</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🍩</div><div class="comparison-card__title">5. Large Intestine</div><div class="comparison-card__desc">Soaks up extra water</div></div>
+              <div class="comparison-card"><div class="comparison-card__icon">🚽</div><div class="comparison-card__title">6. Anus</div><div class="comparison-card__desc">Removes undigested waste</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Videos -->
+      <div class="lesson-section" data-section="videos">
+        <div class="lesson-card">
+          <div class="lesson-card__header"><div class="lesson-card__icon">🎬</div><div><div class="lesson-card__title">Watch & Learn</div><div class="lesson-card__subtitle">Educational videos</div></div></div>
+        </div>
+        <div class="video-grid">
+          <div class="video-slot"><div class="video-slot__embed"><!-- YOUTUBE LINK SLOT 1: Teeth --></div><div class="video-slot__info"><div class="video-slot__title">🦷 Types of Teeth</div></div></div>
+          <div class="video-slot"><div class="video-slot__embed"><!-- YOUTUBE LINK SLOT 2: Microbes --></div><div class="video-slot__info"><div class="video-slot__title">🦠 Useful and Harmful Microbes</div></div></div>
+          <div class="video-slot"><div class="video-slot__embed"><!-- YOUTUBE LINK SLOT 3: Tooth Decay --></div><div class="video-slot__info"><div class="video-slot__title">🪥 How Cavities Form</div></div></div>
+          <div class="video-slot"><div class="video-slot__embed"><!-- YOUTUBE LINK SLOT 4: Digestion --></div><div class="video-slot__info"><div class="video-slot__title">🍎 The Digestive System</div></div></div>
+        </div>
+      </div>
+
+      <!-- ISL -->
+      <div class="lesson-section" data-section="isl">
+        <div class="lesson-card lesson-card--purple">
+          <div class="lesson-card__header"><div class="lesson-card__icon">🤟</div><div><div class="lesson-card__title">ISL Corner — Sign Language Vocabulary</div><div class="lesson-card__subtitle">Tap any card to see the sign</div></div></div>
+        </div>
+        <div class="isl-grid">
+          <div class="isl-card" data-isl="teeth"><span class="isl-card__emoji">🦷</span><span class="isl-card__word">Teeth</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="milk-teeth"><span class="isl-card__emoji">👶</span><span class="isl-card__word">Milk Teeth</span><span class="isl-card__hint">🎥 Tap to learn sign</span></div>
+          <div class="isl-card" data-isl="permanent-teeth"><span class="isl-card__emo
