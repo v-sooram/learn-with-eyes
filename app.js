@@ -14,11 +14,11 @@ const CLASS_CONFIG = {
     emoji: '🌱',
     tagline: 'Plants, Animals & Body Systems',
     chapters: [
-      { id: 'ch1', title: 'Plant Reproduction & Seed Dispersal', emoji: '🌱', status: 'available' },
+      { id: 'ch1', title: 'Growing Plants', emoji: '🌿', status: 'available' },
       { id: 'ch2', title: 'Food and Health', emoji: '🍎', status: 'preview' },
       { id: 'ch3', title: 'Life of Animals', emoji: '🦁', status: 'preview' },
-      { id: 'ch4', title: 'Skeletal & Muscular System', emoji: '🦴', status: 'preview' },
-      { id: 'ch5', title: 'Nervous System & Sense Organs', emoji: '🧠', status: 'preview' }
+      { id: 'ch4', title: 'Skeletal & Muscular', emoji: '🦴', status: 'preview' },
+      { id: 'ch5', title: 'Nervous System', emoji: '🧠', status: 'preview' }
     ]
   },
   class4: {
@@ -38,7 +38,6 @@ let currentClass = localStorage.getItem('lwe_current_class') || 'class5';
 /* =====================================================
    ISL VOCABULARY DATA
    ===================================================== */
-// ---------- CLASS 5, CHAPTER 1 (existing, unchanged) ----------
 const ISL_DATA_C5_CH1 = [
   { id: 'seed', word: 'Seed', emoji: '🌰', graphic: '🌰🌱', gestureName: 'Pinch & Sow Gesture',
     step1: 'Hold your thumb and index finger close together to show the tiny size of a seed.',
@@ -90,7 +89,6 @@ const ISL_DATA_C5_CH1 = [
     meaning: 'Living creatures that eat fruits and help disperse seeds in nature.' }
 ];
 
-// ---------- CLASS 4, CHAPTER 1 — Food: Our Basic Need ----------
 const ISL_DATA_C4_CH1 = [
   { id: 'nutrients', word: 'Nutrients', emoji: '🍎', graphic: '🍎🥛🍞', gestureName: 'Tiny Parts Gesture',
     step1: 'Pinch the fingertips of both hands together like holding tiny grains.',
@@ -127,7 +125,7 @@ const ISL_DATA_C4_CH1 = [
   { id: 'roughage', word: 'Roughage / Fibre', emoji: '🧹', graphic: '🥦🧹', gestureName: 'Sweeping Gesture',
     step1: 'Hold one flat palm out and sweep the other palm across it.',
     step2: 'Point to your stomach and make a downward sweeping motion.',
-    meaning: 'Parts of food that clean our stomach and push waste out — found in vegetables and whole grains.' },
+    meaning: 'Parts of food that clean our stomach and push waste out — vegetables and whole grains.' },
   { id: 'preservation', word: 'Preservation', emoji: '🥫', graphic: '🥫❄️', gestureName: 'Protect & Save Gesture',
     step1: 'Cup both hands protectively around an imaginary object.',
     step2: 'Tap your wrist where a watch sits, meaning "save for later".',
@@ -142,7 +140,6 @@ const ISL_DATA_C4_CH1 = [
     meaning: 'Biting food into small, soft pieces with the help of teeth and saliva.' }
 ];
 
-// ---------- CLASS 4, CHAPTER 2 — Teeth, Microbes & Digestion ----------
 const ISL_DATA_C4_CH2 = [
   { id: 'teeth', word: 'Teeth', emoji: '🦷', graphic: '🦷😁', gestureName: 'Tap Teeth Gesture',
     step1: 'Tap your front upper teeth with your index finger.',
@@ -206,16 +203,16 @@ const ISL_DATA_C4_CH2 = [
     meaning: 'The liquid in the mouth that softens food and helps chewing.' }
 ];
 
-// ---------- Master registry ----------
 const ISL_REGISTRY = {
   class5: { ch1: ISL_DATA_C5_CH1 },
   class4: { ch1: ISL_DATA_C4_CH1, ch2: ISL_DATA_C4_CH2 }
 };
 
-// ---------- Which ISL data is active on the currently displayed chapter ----------
 let activeIslData = ISL_DATA_C5_CH1;
 
-// ---------- Chapter previews for Class 5 (unchanged) ----------
+/* =====================================================
+   CHAPTER PREVIEWS (Class 5 only)
+   ===================================================== */
 const CHAPTER_PREVIEWS = {
   class5: {
     ch2: { title: 'Chapter 2: Food and Health', emoji: '🍎',
@@ -247,19 +244,37 @@ const CHAPTER_PREVIEWS = {
                '👁️ Eyes, Ears, Nose, Tongue & Skin Care',
                '🤟 Communication & Visual Perception for Deaf Individuals'] }
   },
-  class4: {} // both chapters are available — no previews
+  class4: {}
 };
 
-// ---------- Class 4 Chapter 1: Food matching game data ----------
-const MATCH_GAME_C4_CH1 = {
-  // seeds (draggable food items) → drop-zone (nutrient) mapping
+/* =====================================================
+   MATCHING-GAME DATA (per chapter)
+   ===================================================== */
+const MATCH_GAME_C5_CH1 = {
   seeds: [
-    { id: 'rice',   label: 'Rice / Roti',   emoji: '🍚', match: 'carbs' },
-    { id: 'potato', label: 'Potato',        emoji: '🥔', match: 'carbs' },
-    { id: 'ghee',   label: 'Ghee / Oil',    emoji: '🧈', match: 'fats' },
-    { id: 'nuts',   label: 'Nuts / Butter', emoji: '🥜', match: 'fats' },
-    { id: 'dal',    label: 'Dal / Eggs',    emoji: '🥚', match: 'protein' },
-    { id: 'milk',   label: 'Milk / Paneer', emoji: '🥛', match: 'protein' },
+    { id: 'dandelion', label: 'Dandelion',  emoji: '🌼', match: 'wind'   },
+    { id: 'maple',     label: 'Maple Seed', emoji: '🍁', match: 'wind'   },
+    { id: 'coconut',   label: 'Coconut',    emoji: '🥥', match: 'water'  },
+    { id: 'lotus',     label: 'Lotus Pod',  emoji: '🪷', match: 'water'  },
+    { id: 'mango',     label: 'Mango',      emoji: '🥭', match: 'animal' },
+    { id: 'pea',       label: 'Pea Pod',    emoji: '🫛', match: 'burst'  }
+  ],
+  zones: [
+    { key: 'wind',   label: '🌬️ Wind Dispersal',   limit: 2 },
+    { key: 'water',  label: '🌊 Water Dispersal',  limit: 2 },
+    { key: 'animal', label: '🐦 Animal Dispersal', limit: 1 },
+    { key: 'burst',  label: '💥 Bursting Open',    limit: 1 }
+  ]
+};
+
+const MATCH_GAME_C4_CH1 = {
+  seeds: [
+    { id: 'rice',   label: 'Rice / Roti',   emoji: '🍚', match: 'carbs'    },
+    { id: 'potato', label: 'Potato',        emoji: '🥔', match: 'carbs'    },
+    { id: 'ghee',   label: 'Ghee / Oil',    emoji: '🧈', match: 'fats'     },
+    { id: 'nuts',   label: 'Nuts / Butter', emoji: '🥜', match: 'fats'     },
+    { id: 'dal',    label: 'Dal / Eggs',    emoji: '🥚', match: 'protein'  },
+    { id: 'milk',   label: 'Milk / Paneer', emoji: '🥛', match: 'protein'  },
     { id: 'fruit',  label: 'Fruits',        emoji: '🍊', match: 'vitamins' },
     { id: 'veg',    label: 'Vegetables',    emoji: '🥦', match: 'vitamins' }
   ],
@@ -271,7 +286,6 @@ const MATCH_GAME_C4_CH1 = {
   ]
 };
 
-// ---------- Class 4 Chapter 2: Teeth matching game data ----------
 const MATCH_GAME_C4_CH2 = {
   seeds: [
     { id: 'incisors',  label: 'Incisors',  emoji: '✂️', match: 'cutting'  },
@@ -287,11 +301,10 @@ const MATCH_GAME_C4_CH2 = {
   ]
 };
 
-// ---------- Active matching game data ----------
 let activeMatchData = null;
 
 /* =====================================================
-   1. THEME & ACCESSIBILITY  (unchanged)
+   1. THEME & ACCESSIBILITY
    ===================================================== */
 function initThemeAndAccessibility() {
   const themeBtn = document.getElementById('themeToggleBtn');
@@ -328,7 +341,7 @@ function initThemeAndAccessibility() {
 }
 
 /* =====================================================
-   2. CLASS SELECTOR
+   2. CLASS SELECTOR + RENDER
    ===================================================== */
 function initClassSelector() {
   document.querySelectorAll('.class-card[data-class]').forEach(card => {
@@ -339,64 +352,71 @@ function initClassSelector() {
       localStorage.setItem('lwe_current_class', cls);
       renderClassContent();
       navigateTo('home');
+      restoreSavedProgress();
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
 }
 
-/**
- * Rebuild home units + sidebar links for the current class.
- * Expects:
- *   #homeUnitsGrid   - container for unit cards
- *   #sidebarNavList  - <ul> for chapter links
- */
 function renderClassContent() {
   const cfg = CLASS_CONFIG[currentClass];
 
-  // ----- Home page unit cards -----
+  // ---- Home unit grid ----
   const grid = document.getElementById('homeUnitsGrid');
   if (grid) {
     grid.innerHTML = '';
     cfg.chapters.forEach((ch, idx) => {
       const card = document.createElement('div');
-      card.className = 'unit-card' + (ch.status === 'preview' ? ' unit-card--preview' : '');
-      card.setAttribute('data-page', `${currentClass}-${ch.id}`);
+      card.className = 'unit-card' + (ch.status === 'preview' ? ' chapter-preview-card' : '');
+      if (ch.status === 'preview') {
+        card.setAttribute('data-chapter', ch.id);
+        card.style.cursor = 'pointer';
+      } else {
+        card.setAttribute('data-page', `${currentClass}-${ch.id}`);
+      }
       card.innerHTML = `
-        <div class="unit-card__emoji">${ch.emoji}</div>
-        <div class="unit-card__body">
-          <h3 class="unit-card__title">Chapter ${idx + 1}: ${ch.title}</h3>
-          <p class="unit-card__desc">${ch.status === 'available' ? 'Tap to start learning →' : 'Coming soon…'}</p>
-        </div>
+        <span class="unit-card__icon">${ch.emoji}</span>
+        <div class="unit-card__number">Chapter ${idx + 1}</div>
+        <div class="unit-card__title">${ch.title}</div>
+        ${ch.status === 'preview'
+          ? `<span class="unit-card__badge" style="background:rgba(0,0,0,.06);color:var(--text-secondary);margin-top:12px;">Coming Soon • Tap Preview</span>`
+          : `<div class="progress-bar" style="margin-top:16px;"><div class="progress-bar__fill" style="width:0%;"></div></div>`}
       `;
-      card.addEventListener('click', () => navigateTo(`${currentClass}-${ch.id}`));
+      if (ch.status !== 'preview') {
+        card.addEventListener('click', () => navigateTo(`${currentClass}-${ch.id}`));
+      }
       grid.appendChild(card);
     });
   }
 
-  // ----- Sidebar chapter links -----
+  // ---- Sidebar chapter links ----
   const navList = document.getElementById('sidebarNavList');
   if (navList) {
     navList.innerHTML = '';
     cfg.chapters.forEach((ch, idx) => {
       const li = document.createElement('li');
+      const isPreview = ch.status === 'preview';
       li.innerHTML = `
-        <a href="#" class="sidebar__link" id="nav-${currentClass}-${ch.id}" data-page="${currentClass}-${ch.id}">
-          <span class="sidebar__icon">${ch.emoji}</span>
-          <span class="sidebar__label">Chapter ${idx + 1}: ${ch.title}</span>
-          ${ch.status === 'preview' ? '<span class="sidebar__badge">Soon</span>' : ''}
+        <a href="#"
+           class="sidebar__link${isPreview ? ' chapter-preview-link' : ''}"
+           ${isPreview
+             ? `data-chapter="${ch.id}"`
+             : `data-page="${currentClass}-${ch.id}" id="nav-${currentClass}-${ch.id}"`}>
+          <span class="sidebar__link-icon">${ch.emoji}</span>
+          <span class="sidebar__link-text">${idx + 1}. ${ch.title}</span>
+          <span class="sidebar__progress">${isPreview ? '🔒' : '●'}</span>
         </a>`;
+      if (!isPreview) {
+        const a = li.querySelector('a');
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          navigateTo(`${currentClass}-${ch.id}`);
+        });
+      }
       navList.appendChild(li);
-    });
-    // rebind
-    navList.querySelectorAll('.sidebar__link[data-page]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        navigateTo(link.getAttribute('data-page'));
-      });
     });
   }
 
-  // ----- Highlight the class card that's active -----
   document.querySelectorAll('.class-card[data-class]').forEach(card => {
     card.classList.toggle('active', card.getAttribute('data-class') === currentClass);
   });
@@ -428,16 +448,8 @@ function initNavigation() {
   if (headerLogo) headerLogo.addEventListener('click', () => navigateTo('home'));
 }
 
-/**
- * Navigate to a page.
- * Accepts:   "home"
- *            "class5-ch1" / "class4-ch2"   (explicit class)
- *            "ch1"                         (legacy — assumes Class 5)
- */
 function navigateTo(pageId) {
   if (!pageId) return;
-
-  // Legacy resolution
   if (pageId.startsWith('ch')) pageId = `${currentClass}-${pageId}`;
 
   document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
@@ -446,7 +458,6 @@ function navigateTo(pageId) {
   const target = document.getElementById(`page-${pageId}`);
   if (!target) { console.warn('Page not found:', pageId); return; }
 
-  // If it's a chapter belonging to a different class, switch class first
   const [cls, ch] = pageId.split('-');
   if (CLASS_CONFIG[cls] && cls !== currentClass) {
     currentClass = cls;
@@ -454,13 +465,14 @@ function navigateTo(pageId) {
     renderClassContent();
   }
 
-  // Bind ISL data based on the page being opened
+  // Bind ISL data
   if (cls === 'class5' && ch === 'ch1') activeIslData = ISL_DATA_C5_CH1;
   else if (cls === 'class4' && ch === 'ch1') activeIslData = ISL_DATA_C4_CH1;
   else if (cls === 'class4' && ch === 'ch2') activeIslData = ISL_DATA_C4_CH2;
 
   // Bind matching-game data
-  if (cls === 'class4' && ch === 'ch1') activeMatchData = MATCH_GAME_C4_CH1;
+  if (cls === 'class5' && ch === 'ch1') activeMatchData = MATCH_GAME_C5_CH1;
+  else if (cls === 'class4' && ch === 'ch1') activeMatchData = MATCH_GAME_C4_CH1;
   else if (cls === 'class4' && ch === 'ch2') activeMatchData = MATCH_GAME_C4_CH2;
   else activeMatchData = null;
 
@@ -473,7 +485,11 @@ function navigateTo(pageId) {
   const sidebar = document.getElementById('sidebar');
   if (sidebar && sidebar.classList.contains('open')) sidebar.classList.remove('open');
 
-  // Reset scroll-based fade visibility for the new page
+  // Reset section tabs to first tab
+  const firstTab = target.querySelector('.section-tab');
+  if (firstTab && !firstTab.classList.contains('active')) firstTab.click();
+
+  // Reset fade elements
   document.querySelectorAll('.fade-in').forEach(el => el.classList.remove('visible'));
   setTimeout(() => {
     document.querySelectorAll('.fade-in').forEach(el => {
@@ -483,35 +499,41 @@ function navigateTo(pageId) {
       }
     });
   }, 100);
+
+  // Build the matching game for this chapter (no-op if none)
+  initMatchingGame();
 }
 
 /* =====================================================
-   4. TABS  (unchanged — works per-page)
+   4. SECTION TABS (scoped per page)
    ===================================================== */
 function initTabs() {
-  const tabs = document.querySelectorAll('.section-tab');
-  const sections = document.querySelectorAll('.lesson-section');
+  document.querySelectorAll('.page').forEach(page => {
+    const tabs = page.querySelectorAll('.section-tab');
+    const sections = page.querySelectorAll('.lesson-section');
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      sections.forEach(s => s.classList.remove('active'));
-      tab.classList.add('active');
-      const secId = tab.getAttribute('data-section');
-      const sec = document.getElementById(`section-${secId}`);
-      if (sec) {
-        sec.classList.add('active');
-        sec.querySelectorAll('.fade-in').forEach(el => {
-          el.classList.remove('visible');
-          setTimeout(() => el.classList.add('visible'), 50);
-        });
-      }
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        sections.forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+
+        const secId = tab.getAttribute('data-section');
+        const sec = page.querySelector(`.lesson-section[data-section="${secId}"]`);
+        if (sec) {
+          sec.classList.add('active');
+          sec.querySelectorAll('.fade-in').forEach(el => {
+            el.classList.remove('visible');
+            setTimeout(() => el.classList.add('visible'), 50);
+          });
+        }
+      });
     });
   });
 }
 
 /* =====================================================
-   5. SCROLL EFFECTS  (unchanged)
+   5. SCROLL EFFECTS
    ===================================================== */
 function initScrollEffects() {
   const header = document.getElementById('header');
@@ -530,7 +552,7 @@ function initScrollEffects() {
 }
 
 /* =====================================================
-   6. ISL MODAL  (uses activeIslData)
+   6. ISL MODAL
    ===================================================== */
 let currentIslIndex = 0;
 
@@ -559,7 +581,6 @@ function initISLModalSystem() {
     document.getElementById('islCounter').textContent = `${currentIslIndex + 1} / ${activeIslData.length}`;
   }
 
-  // Delegated click so newly-built Class 4 cards work without rebinding
   document.addEventListener('click', (e) => {
     const card = e.target.closest('.isl-card');
     if (!card) return;
@@ -586,7 +607,7 @@ function initISLModalSystem() {
 }
 
 /* =====================================================
-   7. CHAPTER PREVIEW MODAL  (class-aware)
+   7. CHAPTER PREVIEW MODAL
    ===================================================== */
 function initChapterPreviewModal() {
   const modal = document.getElementById('chapterModal');
@@ -609,9 +630,8 @@ function initChapterPreviewModal() {
 
   function closePreview() { modal.classList.remove('active'); document.body.style.overflow = ''; }
 
-  // Delegated so newly-added sidebar links work
   document.addEventListener('click', (e) => {
-    const trigger = e.target.closest('.chapter-preview-link, .chapter-preview-card, .sidebar__link');
+    const trigger = e.target.closest('.chapter-preview-link, .chapter-preview-card');
     if (!trigger) return;
     const chId = trigger.getAttribute('data-chapter');
     if (chId) { e.preventDefault(); openPreview(chId); }
@@ -624,192 +644,202 @@ function initChapterPreviewModal() {
 }
 
 /* =====================================================
-   8. MATCHING GAME  (data-driven, per chapter)
+   8. MATCHING GAME (data-driven, safe to re-run)
    ===================================================== */
 function initMatchingGame() {
-  const bank = document.getElementById('seedBank');
-  const dropZones = document.querySelectorAll('.drop-zone');
+  const activePage = Array.from(document.querySelectorAll('.page'))
+    .find(p => p.style.display !== 'none');
+  if (!activePage || !activeMatchData) return;
+
+  const gameRoot = activePage.querySelector('.match-game');
+  if (!gameRoot) return;
+
+  const bank = activePage.querySelector('#seedBank');
+  const dropZones = activePage.querySelectorAll('.drop-zone');
+  const scoreEl = activePage.querySelector('#matchScoreCount');
+  const celebration = activePage.querySelector('#matchCelebration');
+  const resetBtn = activePage.querySelector('#resetMatchBtn');
   if (!bank || !dropZones.length) return;
 
-  // Rebuild bank + zones from activeMatchData
-  function rebuild() {
-    if (!activeMatchData) return;
+  // Bind once per chapter (identified by a data flag on the root)
+  if (gameRoot.dataset.bound !== 'true') {
+    gameRoot._resetFn = bindMatchHandlers(activePage, gameRoot, bank, dropZones, scoreEl, celebration, resetBtn);
+    gameRoot.dataset.bound = 'true';
+  }
 
-    // Clear
-    bank.innerHTML = '';
+  // Rebuild content every time we visit
+  buildMatchContent(activePage, bank, dropZones);
+  if (typeof gameRoot._resetFn === 'function') gameRoot._resetFn();
+}
+
+function buildMatchContent(activePage, bank, dropZones) {
+  bank.innerHTML = '';
+  dropZones.forEach(z => {
+    const items = z.querySelector('.drop-zone__items');
+    if (items) items.innerHTML = '';
+    z.classList.remove('filled', 'highlight-target', 'drag-over');
+  });
+
+  activeMatchData.seeds.forEach(s => {
+    const el = document.createElement('div');
+    el.className = 'drag-item';
+    el.setAttribute('draggable', 'true');
+    el.setAttribute('data-match', s.match);
+    el.innerHTML = `<span class="drag-item__emoji">${s.emoji}</span><span class="drag-item__label">${s.label}</span>`;
+    bank.appendChild(el);
+  });
+
+  activeMatchData.zones.forEach(z => {
+    const el = activePage.querySelector(`.drop-zone[data-accept="${z.key}"]`);
+    if (!el) return;
+    const cnt = el.querySelector('.drop-zone__count');
+    if (cnt) cnt.textContent = `0/${z.limit}`;
+  });
+}
+
+function bindMatchHandlers(activePage, gameRoot, bank, dropZones, scoreEl, celebration, resetBtn) {
+  let selectedSeed = null;
+  let draggedItem = null;
+  let matchedCount = 0;
+
+  const limitOf = key => (activeMatchData.zones.find(z => z.key === key) || {}).limit ?? 99;
+  const countOf = key => {
+    const el = activePage.querySelector(`.drop-zone[data-accept="${key}"] .drop-zone__count`);
+    return el ? (parseInt(el.textContent.split('/')[0], 10) || 0) : 0;
+  };
+  const bump = key => {
+    const el = activePage.querySelector(`.drop-zone[data-accept="${key}"] .drop-zone__count`);
+    if (el) el.textContent = `${countOf(key) + 1}/${limitOf(key)}`;
+  };
+
+  // ---- reset ----
+  function resetGame() {
+    matchedCount = 0;
+    selectedSeed = null;
+    draggedItem = null;
+    if (scoreEl) scoreEl.textContent = '0';
+    if (celebration) celebration.style.display = 'none';
+
     dropZones.forEach(z => {
+      z.classList.remove('filled', 'drag-over', 'highlight-target');
+      const key = z.getAttribute('data-accept');
+      const cnt = z.querySelector('.drop-zone__count');
+      if (cnt) cnt.textContent = `0/${limitOf(key)}`;
       const items = z.querySelector('.drop-zone__items');
       if (items) items.innerHTML = '';
-      z.classList.remove('filled');
-      const cnt = z.querySelector('.drop-zone__count');
-      if (cnt) cnt.textContent = '';
     });
 
-    // Seeds
-    activeMatchData.seeds.forEach(s => {
-      const el = document.createElement('div');
-      el.className = 'drag-item';
-      el.setAttribute('draggable', 'true');
-      el.setAttribute('data-match', s.match);
-      el.setAttribute('data-id', s.id);
-      el.innerHTML = `<span class="drag-item__emoji">${s.emoji}</span><span class="drag-item__label">${s.label}</span>`;
-      bank.appendChild(el);
+    activePage.querySelectorAll('.drag-item').forEach(seed => {
+      seed.setAttribute('draggable', 'true');
+      seed.classList.remove('selected');
+      seed.style.cssText = '';
+      bank.appendChild(seed);
     });
-
-    // Re-label zones (they exist in HTML with data-accept; we set labels + limits)
-    activeMatchData.zones.forEach(z => {
-      const el = document.querySelector(`.drop-zone[data-accept="${z.key}"]`);
-      if (!el) return;
-      const label = el.querySelector('.drop-zone__label');
-      if (label) label.textContent = z.label;
-      const count = el.querySelector('.drop-zone__count');
-      if (count) count.textContent = `0/${z.limit}`;
-    });
-
-    bindMatchHandlers();
   }
 
-  function bindMatchHandlers() {
-    const draggables = bank.querySelectorAll('.drag-item');
-    const dzs = document.querySelectorAll('.drop-zone');
-    const scoreEl = document.getElementById('matchScoreCount');
-    const celebration = document.getElementById('matchCelebration');
-    const resetBtn = document.getElementById('resetMatchBtn');
+  // ---- match ----
+  function executeMatch(seedEl, zoneEl) {
+    if (!seedEl || !zoneEl || seedEl.getAttribute('draggable') === 'false') return;
+    const exp = zoneEl.getAttribute('data-accept');
+    const act = seedEl.getAttribute('data-match');
 
-    let selectedSeed = null;
-    let draggedItem = null;
-    let matchedCount = 0;
+    if (exp === act && countOf(exp) < limitOf(exp)) {
+      const container = zoneEl.querySelector('.drop-zone__items') || zoneEl;
+      container.appendChild(seedEl);
+      seedEl.classList.remove('selected');
+      seedEl.setAttribute('draggable', 'false');
+      seedEl.style.cursor = 'default';
+      seedEl.style.border = '2px solid var(--color-primary)';
+      seedEl.style.background = '#eafaf1';
 
-    function totalMatches() {
-      return activeMatchData ? activeMatchData.seeds.length : 0;
-    }
+      bump(exp);
+      if (countOf(exp) >= limitOf(exp)) zoneEl.classList.add('filled');
 
-    function zoneLimit(key) {
-      const z = activeMatchData.zones.find(x => x.key === key);
-      return z ? z.limit : 99;
-    }
-    function zoneCount(key) {
-      const el = document.querySelector(`.drop-zone[data-accept="${key}"] .drop-zone__count`);
-      if (!el) return 0;
-      return parseInt(el.textContent.split('/')[0], 10) || 0;
-    }
-    function bumpZone(key) {
-      const el = document.querySelector(`.drop-zone[data-accept="${key}"] .drop-zone__count`);
-      if (el) el.textContent = `${zoneCount(key) + 1}/${zoneLimit(key)}`;
-    }
+      seedEl.style.transform = 'scale(1.15)';
+      setTimeout(() => seedEl.style.transform = 'scale(1)', 200);
 
-    function executeMatch(seedEl, zoneEl) {
-      if (!seedEl || !zoneEl || seedEl.getAttribute('draggable') === 'false') return;
-      const expected = zoneEl.getAttribute('data-accept');
-      const actual = seedEl.getAttribute('data-match');
+      matchedCount++;
+      if (scoreEl) scoreEl.textContent = matchedCount;
+      selectedSeed = null;
+      activePage.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('highlight-target'));
 
-      if (expected === actual && zoneCount(expected) < zoneLimit(expected)) {
-        const container = zoneEl.querySelector('.drop-zone__items') || zoneEl;
-        container.appendChild(seedEl);
-        seedEl.classList.remove('selected');
-        seedEl.setAttribute('draggable', 'false');
-        seedEl.style.cursor = 'default';
-        seedEl.style.border = '2px solid var(--color-primary)';
-        seedEl.style.background = '#eafaf1';
-
-        bumpZone(expected);
-        if (zoneCount(expected) >= zoneLimit(expected)) zoneEl.classList.add('filled');
-
-        seedEl.style.transform = 'scale(1.15)';
-        setTimeout(() => seedEl.style.transform = 'scale(1)', 200);
-
-        matchedCount++;
-        if (scoreEl) scoreEl.textContent = matchedCount;
-        selectedSeed = null;
-        document.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('highlight-target'));
-
-        if (matchedCount === totalMatches()) {
-          if (celebration) celebration.style.display = 'block';
-          triggerConfetti();
-        }
-      } else {
-        seedEl.style.transform = 'translateX(-12px)';
-        seedEl.style.borderColor = 'var(--color-accent-red)';
-        setTimeout(() => {
-          seedEl.style.transform = 'translateX(12px)';
-          setTimeout(() => { seedEl.style.transform = 'translateX(0)'; seedEl.style.borderColor = ''; }, 120);
-        }, 120);
+      if (matchedCount === activeMatchData.seeds.length) {
+        if (celebration) celebration.style.display = 'block';
+        triggerConfetti();
       }
-    }
-
-    draggables.forEach(seed => {
-      seed.addEventListener('click', () => {
-        if (seed.getAttribute('draggable') === 'false') return;
-        if (selectedSeed === seed) {
-          seed.classList.remove('selected'); selectedSeed = null;
-          document.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('highlight-target'));
-        } else {
-          draggables.forEach(s => s.classList.remove('selected'));
-          seed.classList.add('selected'); selectedSeed = seed;
-          document.querySelectorAll('.drop-zone').forEach(z => z.classList.add('highlight-target'));
-        }
-      });
-
-      seed.addEventListener('dragstart', () => {
-        draggedItem = seed;
-        setTimeout(() => seed.style.opacity = '0.5', 0);
-      });
-      seed.addEventListener('dragend', () => {
-        setTimeout(() => { seed.style.opacity = '1'; draggedItem = null; }, 0);
-      });
-    });
-
-    dzs.forEach(zone => {
-      zone.addEventListener('click', () => { if (selectedSeed) executeMatch(selectedSeed, zone); });
-      zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
-      zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
-      zone.addEventListener('drop', e => {
-        e.preventDefault(); zone.classList.remove('drag-over');
-        if (draggedItem) executeMatch(draggedItem, zone);
-      });
-    });
-
-    if (resetBtn) {
-      // Replace any prior handler by cloning the button
-      const fresh = resetBtn.cloneNode(true);
-      resetBtn.parentNode.replaceChild(fresh, resetBtn);
-      fresh.addEventListener('click', () => {
-        matchedCount = 0;
-        if (scoreEl) scoreEl.textContent = '0';
-        if (celebration) celebration.style.display = 'none';
-        document.querySelectorAll('.drop-zone').forEach(z => {
-          z.classList.remove('filled', 'drag-over', 'highlight-target');
-          const c = z.querySelector('.drop-zone__count');
-          if (c) c.textContent = `0/${zoneLimit(z.getAttribute('data-accept'))}`;
-          const items = z.querySelector('.drop-zone__items');
-          if (items) items.innerHTML = '';
-        });
-        bank.querySelectorAll('.drag-item').forEach(seed => {
-          seed.setAttribute('draggable', 'true');
-          seed.style.cssText = '';
-          bank.appendChild(seed);
-        });
-      });
+    } else {
+      seedEl.style.transform = 'translateX(-12px)';
+      seedEl.style.borderColor = 'var(--color-accent-red)';
+      setTimeout(() => {
+        seedEl.style.transform = 'translateX(12px)';
+        setTimeout(() => {
+          seedEl.style.transform = 'translateX(0)';
+          seedEl.style.borderColor = '';
+        }, 120);
+      }, 120);
     }
   }
 
-  // Initial build
-  rebuild();
+  // ---- bank: delegated listeners survive rebuilds ----
+  bank.addEventListener('click', (e) => {
+    const seed = e.target.closest('.drag-item');
+    if (!seed) return;
+    if (seed.getAttribute('draggable') === 'false') return;
 
-  // Rebuild whenever chapter navigation happens — hook into navigateTo via observer
-  // Simpler: expose rebuild globally
-  window.__rebuildMatchGame = rebuild;
+    if (selectedSeed === seed) {
+      seed.classList.remove('selected');
+      selectedSeed = null;
+      activePage.querySelectorAll('.drop-zone').forEach(z => z.classList.remove('highlight-target'));
+    } else {
+      activePage.querySelectorAll('.drag-item').forEach(s => s.classList.remove('selected'));
+      seed.classList.add('selected');
+      selectedSeed = seed;
+      activePage.querySelectorAll('.drop-zone').forEach(z => z.classList.add('highlight-target'));
+    }
+  });
+
+  bank.addEventListener('dragstart', (e) => {
+    const seed = e.target.closest('.drag-item');
+    if (!seed) return;
+    draggedItem = seed;
+    setTimeout(() => seed.style.opacity = '0.5', 0);
+  });
+
+  bank.addEventListener('dragend', (e) => {
+    const seed = e.target.closest('.drag-item');
+    if (!seed) return;
+    setTimeout(() => { seed.style.opacity = '1'; draggedItem = null; }, 0);
+  });
+
+  // ---- drop zones: static, bound once ----
+  dropZones.forEach(zone => {
+    zone.addEventListener('click', () => { if (selectedSeed) executeMatch(selectedSeed, zone); });
+    zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag-over'); });
+    zone.addEventListener('dragleave', () => zone.classList.remove('drag-over'));
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.classList.remove('drag-over');
+      if (draggedItem) executeMatch(draggedItem, zone);
+    });
+  });
+
+  // ---- reset ----
+  if (resetBtn) resetBtn.addEventListener('click', resetGame);
+
+  return resetGame;
 }
 
 /* =====================================================
-   9. FLASHCARDS  (delegated)
+   9. VOCAB FLASHCARDS (delegated)
    ===================================================== */
 function initInteractiveFlashcards() {
   document.addEventListener('click', (e) => {
     const card = e.target.closest('.vocab-card');
     if (!card) return;
     const all = document.querySelectorAll('.vocab-card');
-    all.forEach(c => { if (c !== card) { c.style.borderColor = 'transparent'; c.style.transform = 'scale(1)'; } });
+    all.forEach(c => {
+      if (c !== card) { c.style.borderColor = 'transparent'; c.style.transform = 'scale(1)'; }
+    });
     const isFocused = card.style.borderColor === 'var(--color-primary)';
     if (isFocused) { card.style.borderColor = 'transparent'; card.style.transform = 'scale(1)'; }
     else { card.style.borderColor = 'var(--color-primary)'; card.style.transform = 'scale(1.03)'; }
@@ -817,10 +847,9 @@ function initInteractiveFlashcards() {
 }
 
 /* =====================================================
-   10. QUIZ  (per-page — uses data-qu inside each page)
+   10. QUIZ (scoped via [data-quiz])
    ===================================================== */
 function initQuiz() {
-  // Each quiz scope is a page with [data-quiz]
   document.querySelectorAll('[data-quiz]').forEach(scope => {
     const options = scope.querySelectorAll('.quiz-option');
     const checkBtn = scope.querySelector('#checkQuizBtn');
@@ -829,7 +858,7 @@ function initQuiz() {
     const scoreNum = scope.querySelector('#quizScoreNum');
     const scoreStars = scope.querySelector('#quizStars');
     const total = parseInt(scope.getAttribute('data-total') || '7', 10);
-    const storageKey = scope.getAttribute('data-quiz'); // e.g. "class5-ch1"
+    const storageKey = scope.getAttribute('data-quiz');
 
     let userAnswers = {};
 
@@ -888,9 +917,8 @@ function initQuiz() {
     if (retryBtn) {
       retryBtn.addEventListener('click', () => {
         userAnswers = {};
-        checkBtn.disabled = false;
-        checkBtn.style.display = 'inline-flex';
-        scoreContainer.classList.remove('show');
+        if (checkBtn) { checkBtn.disabled = false; checkBtn.style.display = 'inline-flex'; }
+        if (scoreContainer) scoreContainer.classList.remove('show');
         options.forEach(o => o.classList.remove('selected', 'correct', 'incorrect'));
         scope.querySelectorAll('.quiz-feedback').forEach(el => el.classList.remove('show', 'correct', 'incorrect'));
         scope.querySelectorAll('.quiz-explanation').forEach(el => el.classList.remove('show'));
@@ -915,13 +943,14 @@ function applyCompletionBadge(storageKey) {
 function restoreSavedProgress() {
   Object.keys(localStorage).forEach(k => {
     if (k.startsWith('lwe_') && k.endsWith('_completed')) {
-      applyCompletionBadge(k.replace('lwe_', '').replace('_completed', ''));
+      const storageKey = k.replace('lwe_', '').replace('_completed', '');
+      applyCompletionBadge(storageKey);
     }
   });
 }
 
 /* =====================================================
-   11. CONFETTI  (unchanged)
+   11. CONFETTI
    ===================================================== */
 function triggerConfetti() {
   const container = document.getElementById('confettiContainer');
@@ -946,24 +975,15 @@ function triggerConfetti() {
    ===================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   initThemeAndAccessibility();
-  renderClassContent();       // build home + sidebar from CLASS_CONFIG
+  renderClassContent();
   initClassSelector();
   initNavigation();
   initTabs();
   initScrollEffects();
   initISLModalSystem();
   initChapterPreviewModal();
-  initMatchingGame();
   initInteractiveFlashcards();
   initQuiz();
   restoreSavedProgress();
+  // Note: initMatchingGame is called from navigateTo(), not here.
 });
-
-// Whenever a chapter page opens, rebuild that chapter's matching game
-const _origNavigate = navigateTo;
-window.navigateTo = function (pageId) {
-  _origNavigate(pageId);
-  if (typeof window.__rebuildMatchGame === 'function') {
-    setTimeout(() => window.__rebuildMatchGame(), 50);
-  }
-};
